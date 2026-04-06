@@ -5,8 +5,9 @@ import { cv } from '../../content/cv'
 function SectionHeading({ title }: { title: string }) {
   return (
     <div className="mb-6 flex items-center gap-4">
-      <div className="h-px flex-1 bg-gradient-to-r from-primary/60 to-transparent" />
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       <h2 className="text-sm font-semibold tracking-[0.35em] text-primary uppercase">{title}</h2>
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
     </div>
   )
 }
@@ -65,8 +66,8 @@ export function CvPage() {
             </div>
           </div>
 
-          <div className="grid gap-10 px-8 py-10 md:grid-cols-[1.2fr_0.8fr] md:px-12">
-            <div className="space-y-12">
+          <div className="space-y-12 px-8 py-10 md:px-12">
+            <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
               <section>
                 <SectionHeading title="Professional Experience" />
                 <div className="space-y-6">
@@ -85,64 +86,67 @@ export function CvPage() {
                 </div>
               </section>
 
-              <section>
-                <SectionHeading title="Education" />
-                <div className="space-y-6">
-                  {cv.education.map((item) => (
-                    <div key={`${item.qualification}-${item.institution}`} className="rounded-2xl border border-border bg-background/35 p-6">
-                      <div className="mb-2 flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-                        <div>
-                          <h3 className="text-xl font-semibold">{item.qualification}</h3>
-                          <p className="text-muted-foreground">{item.institution}</p>
-                        </div>
-                        <p className="text-sm text-primary">{item.period}</p>
+              <div className="space-y-8">
+                <section className="rounded-2xl border border-border bg-background/35 p-6">
+                  <SectionHeading title="Technical Skills" />
+                  <ul className="space-y-3">
+                    {cv.technicalSkills.map((skill) => (
+                      <li key={skill} className="flex items-start gap-3 text-foreground/90">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span>{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className="rounded-2xl border border-border bg-background/35 p-6">
+                  <SectionHeading title="Transferable Skills" />
+                  <ul className="space-y-3">
+                    {cv.transferableSkills.map((skill) => (
+                      <li key={skill} className="flex items-start gap-3 text-foreground/90">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                        <span>{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className="rounded-2xl border border-border bg-background/35 p-6">
+                  <SectionHeading title="Hobbies & Interests" />
+                  <p className="leading-7 text-foreground/90">{cv.interests}</p>
+                </section>
+              </div>
+            </div>
+
+            <section>
+              <SectionHeading title="Education" />
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {cv.education.map((item) => (
+                  <div
+                    key={`${item.qualification}-${item.institution}`}
+                    className="rounded-2xl border border-border bg-background/35 p-6"
+                  >
+                    <div className="mb-2 flex flex-col gap-2">
+                      <div>
+                        <h3 className="text-xl font-semibold">{item.qualification}</h3>
+                        <p className="text-muted-foreground">{item.institution}</p>
                       </div>
-                      {item.notes.length > 0 ? (
-                        <ul className="space-y-2 pt-1">
-                          {item.notes.map((note) => (
-                            <li key={note} className="flex items-start gap-3 text-foreground/90">
-                              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                              <span>{note}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
+                      <p className="text-sm text-primary">{item.period}</p>
                     </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-
-            <div className="space-y-8">
-              <section className="rounded-2xl border border-border bg-background/35 p-6">
-                <SectionHeading title="Technical Skills" />
-                <ul className="space-y-3">
-                  {cv.technicalSkills.map((skill) => (
-                    <li key={skill} className="flex items-start gap-3 text-foreground/90">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                      <span>{skill}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
-              <section className="rounded-2xl border border-border bg-background/35 p-6">
-                <SectionHeading title="Transferable Skills" />
-                <ul className="space-y-3">
-                  {cv.transferableSkills.map((skill) => (
-                    <li key={skill} className="flex items-start gap-3 text-foreground/90">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                      <span>{skill}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-
-              <section className="rounded-2xl border border-border bg-background/35 p-6">
-                <SectionHeading title="Hobbies & Interests" />
-                <p className="leading-7 text-foreground/90">{cv.interests}</p>
-              </section>
-            </div>
+                    {item.notes.length > 0 ? (
+                      <ul className="space-y-2 pt-1">
+                        {item.notes.map((note) => (
+                          <li key={note} className="flex items-start gap-3 text-foreground/90">
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span>{note}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         </motion.div>
       </div>
