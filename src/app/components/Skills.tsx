@@ -1,46 +1,36 @@
 import { Cloud, Code, Cpu, Database, Rocket, Wand2 } from 'lucide-react'
 import { motion } from 'motion/react'
+import { portfolio } from '../../content/portfolio'
 
-const skills = [
+const skillMeta = [
   {
-    category: 'Frontend Development',
+    category: 'Frontend Systems',
     icon: Code,
-    items: [
-      'React & TypeScript',
-      'Modern CSS & Tailwind',
-      'State Management',
-      'Performance Optimization',
-    ],
     color: 'from-primary to-blue-400',
   },
   {
-    category: 'Backend Development',
-    icon: Database,
-    items: ['Node.js & Express', 'RESTful APIs', 'Database Design', 'Authentication & Security'],
+    category: 'UI Engineering',
+    icon: Wand2,
     color: 'from-accent to-purple-400',
   },
   {
-    category: 'Cloud & DevOps',
-    icon: Cloud,
-    items: ['AWS & Azure', 'Docker & Kubernetes', 'CI/CD Pipelines', 'Microservices Architecture'],
+    category: 'Product Delivery',
+    icon: Cpu,
     color: 'from-cyan-400 to-primary',
   },
   {
-    category: 'System Architecture',
-    icon: Cpu,
-    items: ['Scalable Systems', 'Design Patterns', 'Performance Tuning', 'Technical Documentation'],
+    category: 'Backend Familiarity',
+    icon: Database,
     color: 'from-blue-500 to-cyan-400',
   },
   {
-    category: 'Aerospace Enthusiast',
+    category: 'Visual Interests',
     icon: Rocket,
-    items: ['Orbital Mechanics', 'Mission Design', 'Space Technology', 'Flight Simulation'],
     color: 'from-purple-500 to-secondary',
   },
   {
-    category: 'Creative Arts',
-    icon: Wand2,
-    items: ['Performance Magic', 'UI/UX Design', 'Creative Problem Solving', 'Public Speaking'],
+    category: 'Working Style',
+    icon: Cloud,
     color: 'from-pink-500 to-accent',
   },
 ]
@@ -59,14 +49,20 @@ export function Skills() {
         >
           <h2 className="mb-4 text-5xl">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Skills & Expertise
+              Core Strengths
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Technical expertise and personal passions</p>
+          <p className="text-xl text-muted-foreground">
+            The areas I focus on when turning concepts into polished products.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill, index) => (
+          {portfolio.skills.map((skill, index) => {
+            const meta = skillMeta[index]
+            const Icon = meta.icon
+
+            return (
             <motion.div
               key={skill.category}
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +77,7 @@ export function Skills() {
             >
               <div className="relative h-full overflow-hidden rounded-xl border border-border bg-card p-6">
                 <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 transition-opacity duration-300 group-hover:opacity-10`}
+                  className={`absolute inset-0 bg-gradient-to-br ${meta.color} opacity-0 transition-opacity duration-300 group-hover:opacity-10`}
                 />
 
                 <motion.div
@@ -102,9 +98,9 @@ export function Skills() {
 
                 <div className="relative z-10">
                   <div
-                    className={`mb-4 h-14 w-14 rounded-lg bg-gradient-to-br ${skill.color} p-3 transition-transform duration-300 group-hover:scale-110`}
+                    className={`mb-4 h-14 w-14 rounded-lg bg-gradient-to-br ${meta.color} p-3 transition-transform duration-300 group-hover:scale-110`}
                   >
-                    <skill.icon className="h-full w-full text-white" />
+                    <Icon className="h-full w-full text-white" />
                   </div>
 
                   <h3 className="mb-4">{skill.category}</h3>
@@ -127,7 +123,8 @@ export function Skills() {
                 </div>
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

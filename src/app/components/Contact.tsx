@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail, Send, Twitter } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useState } from 'react'
+import { portfolio } from '../../content/portfolio'
 
 export function Contact() {
   const [formState, setFormState] = useState({
@@ -15,10 +16,10 @@ export function Contact() {
   }
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Mail, label: 'Email', href: '#' },
+    { icon: Github, label: 'GitHub', href: portfolio.socialLinks[0].href },
+    { icon: Linkedin, label: 'LinkedIn', href: portfolio.socialLinks[1].href },
+    { icon: Twitter, label: 'X', href: portfolio.socialLinks[2].href },
+    { icon: Mail, label: 'Email', href: `mailto:${portfolio.contact.email}` },
   ]
 
   return (
@@ -39,7 +40,9 @@ export function Contact() {
               Let&apos;s Connect
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Let&apos;s discuss your next project</p>
+          <p className="text-xl text-muted-foreground">
+            Open to collaborations, product builds, and frontend-focused opportunities.
+          </p>
         </motion.div>
 
         <div className="grid gap-12 md:grid-cols-2">
@@ -59,7 +62,7 @@ export function Contact() {
                   value={formState.name}
                   onChange={(event) => setFormState({ ...formState, name: event.target.value })}
                   className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  placeholder="John Doe"
+                  placeholder="Your name"
                 />
               </div>
 
@@ -73,7 +76,7 @@ export function Contact() {
                   value={formState.email}
                   onChange={(event) => setFormState({ ...formState, email: event.target.value })}
                   className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  placeholder="john@example.com"
+                  placeholder="you@example.com"
                 />
               </div>
 
@@ -87,7 +90,7 @@ export function Contact() {
                   onChange={(event) => setFormState({ ...formState, message: event.target.value })}
                   rows={6}
                   className="w-full resize-none rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell me a bit about the project, timeline, or role."
                 />
               </div>
 
@@ -112,20 +115,19 @@ export function Contact() {
             <div className="space-y-6 rounded-2xl border border-border bg-card p-8">
               <h3 className="text-2xl">Get in Touch</h3>
 
-              <p className="text-muted-foreground">
-                I&apos;m always interested in hearing about new opportunities, challenging
-                projects, or simply connecting with fellow developers and tech enthusiasts.
-              </p>
+              <p className="text-muted-foreground">{portfolio.intro}</p>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>contact@example.com</span>
+                  <span>{portfolio.contact.email}</span>
                 </div>
               </div>
 
+              <p className="text-sm text-muted-foreground">{portfolio.contact.note}</p>
+
               <div className="border-t border-border pt-6">
-                <p className="mb-4 text-sm text-muted-foreground">Follow me on social media</p>
+                <p className="mb-4 text-sm text-muted-foreground">Find me online</p>
                 <div className="flex gap-4">
                   {socialLinks.map((link) => (
                     <motion.a
@@ -151,10 +153,7 @@ export function Contact() {
                 <div className="mt-1.5 h-3 w-3 animate-pulse rounded-full bg-green-500" />
                 <div>
                   <h4 className="mb-2">Available for Projects</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Currently accepting new opportunities for full-time positions and freelance
-                    projects.
-                  </p>
+                  <p className="text-sm text-muted-foreground">{portfolio.contact.availability}</p>
                 </div>
               </div>
             </motion.div>

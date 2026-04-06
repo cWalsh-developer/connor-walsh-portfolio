@@ -1,6 +1,7 @@
 import { Menu, Rocket, X } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useState } from 'react'
+import { portfolio } from '../../content/portfolio'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,7 +34,7 @@ export function Navigation() {
               <Rocket className="h-6 w-6 text-white" />
             </div>
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-xl text-transparent">
-              Portfolio
+              {portfolio.name}
             </span>
           </motion.div>
 
@@ -51,13 +52,14 @@ export function Navigation() {
               </motion.button>
             ))}
 
-            <motion.button
+            <motion.a
+              href={portfolio.resume.href}
               whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0, 217, 255, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               className="rounded-lg bg-primary px-6 py-2 text-primary-foreground"
             >
-              Resume
-            </motion.button>
+              {portfolio.resume.label}
+            </motion.a>
           </div>
 
           <motion.button
@@ -93,7 +95,8 @@ export function Navigation() {
                 {item.label}
               </motion.button>
             ))}
-            <motion.button
+            <motion.a
+              href={portfolio.resume.href}
               initial={{ x: -20, opacity: 0 }}
               animate={{
                 x: isOpen ? 0 : -20,
@@ -102,8 +105,8 @@ export function Navigation() {
               transition={{ delay: navItems.length * 0.1 }}
               className="mt-2 w-full rounded-lg bg-primary px-4 py-2 text-primary-foreground"
             >
-              Resume
-            </motion.button>
+              {portfolio.resume.label}
+            </motion.a>
           </div>
         </motion.div>
       </div>

@@ -1,5 +1,6 @@
 import { Rocket, Sparkles, Terminal } from 'lucide-react'
 import { motion } from 'motion/react'
+import { portfolio } from '../../content/portfolio'
 
 export function Hero() {
   return (
@@ -75,21 +76,21 @@ export function Hero() {
             <div className="mb-4 flex items-center justify-center gap-3">
               <Terminal className="h-8 w-8 text-primary" />
               <span className="rounded-full border border-primary/30 bg-primary/5 px-4 py-1 text-sm tracking-wider text-primary">
-                SOFTWARE ENGINEER
+                {portfolio.badge}
               </span>
             </div>
           </motion.div>
 
           <h1 className="text-6xl tracking-tight md:text-8xl">
             <span className="animate-pulse bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              SOFTWARE ENGINEER
+              {portfolio.role}
             </span>
           </h1>
 
           <p className="mx-auto max-w-3xl text-xl text-muted-foreground md:text-2xl">
-            Building innovative solutions with precision and creativity.
+            {portfolio.brandStatement}
             <br />
-            Passionate about sci-fi, aerospace technology, and the art of illusion.
+            {portfolio.summary}
           </p>
 
           <motion.div
@@ -102,11 +103,9 @@ export function Hero() {
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 217, 255, 0.5)' }}
               whileTap={{ scale: 0.95 }}
               className="group relative overflow-hidden rounded-lg bg-primary px-8 py-4 text-primary-foreground"
-              onClick={() =>
-                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-              }
+              onClick={() => document.querySelector(portfolio.primaryCta.href)?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="relative z-10">View Projects</span>
+              <span className="relative z-10">{portfolio.primaryCta.label}</span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-primary to-accent"
                 initial={{ x: '-100%' }}
@@ -119,11 +118,9 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="rounded-lg border border-primary/30 px-8 py-4 text-foreground transition-colors hover:bg-primary/5"
-              onClick={() =>
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }
+              onClick={() => document.querySelector(portfolio.secondaryCta.href)?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Get In Touch
+              {portfolio.secondaryCta.label}
             </motion.button>
           </motion.div>
         </motion.div>

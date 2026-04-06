@@ -1,7 +1,10 @@
 import { Heart, Rocket } from 'lucide-react'
 import { motion } from 'motion/react'
+import { portfolio } from '../../content/portfolio'
 
 export function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="relative overflow-hidden border-t border-border px-6 py-12">
       <div className="absolute top-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/5 blur-[120px]" />
@@ -19,9 +22,9 @@ export function Footer() {
             </div>
             <div>
               <div className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Crafting the Future
+                {portfolio.name}
               </div>
-              <div className="text-sm text-muted-foreground">One line of code at a time</div>
+              <div className="text-sm text-muted-foreground">{portfolio.role}</div>
             </div>
           </motion.div>
 
@@ -31,9 +34,9 @@ export function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2 text-sm text-muted-foreground"
           >
-            <span>© 2026 Made with</span>
+            <span>{`\u00A9 ${year} Built with`}</span>
             <Heart className="h-4 w-4 animate-pulse fill-accent text-accent" />
-            <span>and futuristic vibes</span>
+            <span>for ambitious digital products</span>
           </motion.div>
         </div>
 

@@ -1,36 +1,7 @@
 import { ExternalLink, Github, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
+import { portfolio } from '../../content/portfolio'
 import { ImageFallback } from './ImageFallback'
-
-const projects = [
-  {
-    title: 'Distributed Task Scheduler',
-    description:
-      'High-performance task scheduling system with real-time monitoring, fault tolerance, and dynamic load balancing.',
-    image:
-      'https://images.unsplash.com/photo-1585051256362-eb56bf4d5ea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXJjdWl0JTIwYm9hcmQlMjB0ZWNobm9sb2d5JTIwZnV0dXJpc3RpY3xlbnwxfHx8fDE3NzU0MzI1MTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Node.js', 'Redis', 'Docker', 'Microservices'],
-    gradient: 'from-blue-500 to-cyan-400',
-  },
-  {
-    title: 'Real-Time Analytics Dashboard',
-    description:
-      'Interactive data visualization platform with live streaming capabilities and custom metric tracking for enterprise applications.',
-    image:
-      'https://images.unsplash.com/photo-1709409903008-fbc1ce9b7dfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFjZSUyMG5lYnVsYSUyMHN0YXJzJTIwY29zbWljfGVufDF8fHx8MTc3NTQzMjUxMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['React', 'TypeScript', 'WebSocket', 'D3.js'],
-    gradient: 'from-purple-500 to-pink-500',
-  },
-  {
-    title: 'Cloud Infrastructure Manager',
-    description:
-      'Automated deployment and monitoring solution for multi-cloud environments with cost optimization and security scanning.',
-    image:
-      'https://images.unsplash.com/photo-1770116316553-9ba33a5666fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZXJvc3BhY2UlMjByb2NrZXQlMjBsYXVuY2glMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3NTQzMjUxMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Python', 'AWS', 'Terraform', 'Kubernetes'],
-    gradient: 'from-cyan-500 to-blue-500',
-  },
-]
 
 export function Projects() {
   return (
@@ -54,14 +25,16 @@ export function Projects() {
 
           <h2 className="mb-4 text-5xl">
             <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              Selected Projects
+              Featured Projects
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Building scalable solutions for complex problems</p>
+          <p className="text-xl text-muted-foreground">
+            A few project directions that show how I approach product, layout, and frontend craft.
+          </p>
         </motion.div>
 
         <div className="space-y-8">
-          {projects.map((project, index) => (
+          {portfolio.projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
@@ -106,23 +79,25 @@ export function Projects() {
                     </div>
 
                     <div className="flex gap-4 pt-4">
-                      <motion.button
+                      <motion.a
+                        href={project.liveHref}
                         whileHover={{ scale: 1.05, x: 5 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center gap-2 text-primary transition-colors hover:text-accent"
                       >
-                        <span>View Project</span>
+                        <span>Live Preview</span>
                         <ExternalLink className="h-4 w-4" />
-                      </motion.button>
+                      </motion.a>
 
-                      <motion.button
+                      <motion.a
+                        href={project.sourceHref}
                         whileHover={{ scale: 1.05, x: 5 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
                       >
                         <Github className="h-4 w-4" />
                         <span>Source Code</span>
-                      </motion.button>
+                      </motion.a>
                     </div>
                   </div>
                 </div>
