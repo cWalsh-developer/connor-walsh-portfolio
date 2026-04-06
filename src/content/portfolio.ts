@@ -1,93 +1,104 @@
 export const portfolio = {
-  name: 'Connor Walsh',
-  role: 'Frontend Developer',
-  badge: 'React / TypeScript / UI Engineering',
-  brandStatement: 'Designing and building futuristic web experiences that feel sharp, fast, and intentional.',
+  name: "Connor Walsh",
+  role: "Full Stack Developer",
+  badge: "Backend systems / Mobile apps / Product builds",
+  brandStatement:
+    "Full-stack developer focused on backend systems and mobile-first product builds.",
   intro:
-    'I turn product ideas and interface concepts into polished React builds with strong visual identity, clean structure, and thoughtful motion.',
+    "I am currently a Software Engineer at BAE Systems, and outside of work I am especially drawn to backend and mobile-focused builds.",
   summary:
-    'My work sits at the intersection of frontend engineering, product thinking, and design implementation, with a focus on experiences that look distinctive without sacrificing clarity or performance.',
+    "I build clean, maintainable products that are practical to ship and enjoyable to use.",
   primaryCta: {
-    label: 'View Projects',
-    href: '#projects',
+    label: "View Projects",
+    href: "#projects",
   },
   secondaryCta: {
-    label: 'Get In Touch',
-    href: '#contact',
+    label: "Get In Touch",
+    href: "#contact",
   },
   resume: {
-    label: 'Resume',
-    href: '#contact',
+    label: "Resume",
+    href: "#contact",
   },
   contact: {
-    email: 'hello@yourdomain.com',
-    note: 'Replace the email and social links in src/content/portfolio.ts with your real details before launch.',
-    availability: 'Available for freelance work, contract roles, and selected full-time opportunities.',
+    email: "connor_w_98@hotmail.com",
+    note: "The links below go directly to my real profiles and email.",
+    availability:
+      "Currently working full-time at BAE Systems and always happy to connect with other developers, teams, and interesting projects.",
   },
   socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/yourusername' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
-    { label: 'X', href: 'https://x.com/yourusername' },
+    { label: "GitHub", href: "https://github.com/cWalsh-developer" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/connorwalsh98/" },
+    { label: "Instagram", href: "https://www.instagram.com/connorwalsh_98/" },
   ],
   skills: [
     {
-      category: 'Frontend Systems',
-      items: ['React', 'TypeScript', 'Reusable component architecture', 'Responsive UI implementation'],
+      category: "Backend Development",
+      items: ["MySQL", "FastAPI", "PostgreSQL", "PHP", "Firebase", "MongoDB"],
     },
     {
-      category: 'UI Engineering',
-      items: ['Design system thinking', 'Animation and interaction polish', 'Accessible interfaces', 'Figma-to-code execution'],
+      category: "Frontend Development",
+      items: ["React", "CSS", "HTML", "Vanilla JavaScript"],
     },
     {
-      category: 'Product Delivery',
-      items: ['Feature planning', 'Incremental shipping', 'Cross-functional collaboration', 'Performance-minded development'],
+      category: "Mobile Development",
+      items: ["React Native", "Expo", "Kotlin", "Jetpack Compose"],
     },
     {
-      category: 'Backend Familiarity',
-      items: ['Node.js', 'REST APIs', 'Auth flows', 'Data integration'],
+      category: "AI Capabilities",
+      items: ["TensorFlow", "Scikit-learn", "PyTorch", "CNN and NN architectures"],
     },
     {
-      category: 'Visual Interests',
-      items: ['Futuristic UI direction', 'Editorial layout structure', 'Creative portfolio design', 'Interface storytelling'],
-    },
-    {
-      category: 'Working Style',
-      items: ['Clear communication', 'Pragmatic decisions', 'Fast iteration', 'High attention to detail'],
+      category: "Workflow",
+      items: [
+        "Agile delivery",
+        "Clear team communication",
+        "Stakeholder collaboration",
+        "Clean design and code structure",
+      ],
     },
   ],
   projects: [
     {
-      title: 'Futuristic Portfolio Experience',
+      title: "PhunParty",
       description:
-        'A cinematic personal site concept focused on visual identity, layered gradients, clear navigation, and high-end frontend presentation.',
-      image:
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      tags: ['React', 'TypeScript', 'Tailwind', 'Motion'],
-      gradient: 'from-cyan-500 to-blue-500',
-      liveHref: '#',
-      sourceHref: '#',
+        "A multiplayer party quiz game where players use their mobile devices to participate, and a shared host screen runs the session in real time.",
+      image: "/projects/Screenshot 2026-04-06 030949.png",
+      mobileImage: "/projects/PhunParty_Mobile_App.jpg",
+      tags: ["Full Stack", "Social App", "Product Build"],
+      gradient: "from-cyan-500 to-blue-500",
+      liveHref: "https://github.com/cWalsh-developer/PhunParty",
+      sourceHref: "https://github.com/cWalsh-developer/PhunParty",
     },
     {
-      title: 'Product Dashboard Concept',
+      title: "CVBuilder",
       description:
-        'A dashboard interface built around dense information, clear hierarchy, and reusable UI patterns for a modern SaaS workflow.',
-      image:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      tags: ['React', 'Charts', 'Design Systems', 'UX'],
-      gradient: 'from-purple-500 to-pink-500',
-      liveHref: '#',
-      sourceHref: '#',
+        "A Java Swing desktop app for building structured CVs through a guided interface and exporting them as CSV files.",
+      image: "/projects/Edit_Referee.png",
+      tags: ["Productivity", "Full Stack", "UX"],
+      gradient: "from-purple-500 to-pink-500",
+      liveHref: "https://github.com/cWalsh-developer/CV_Builder",
+      sourceHref: "https://github.com/cWalsh-developer/CV_Builder",
     },
     {
-      title: 'Launch Campaign Microsite',
+      title: "PacBloke / ModernPacMan",
       description:
-        'A marketing-led build designed to communicate a product launch with bold typography, strong pacing, and responsive presentation.',
-      image:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      tags: ['Frontend', 'Storytelling', 'Responsive Design', 'Performance'],
-      gradient: 'from-blue-500 to-violet-500',
-      liveHref: '#',
-      sourceHref: '#',
+        "A hard-mode Pac-Man remake with split powers, teleport abilities, inverse mode, and a modern browser-based presentation.",
+      image: "/projects/Screenshot 2026-04-06 021654.png",
+      tags: ["Game Project", "Frontend", "Creative Build"],
+      gradient: "from-blue-500 to-violet-500",
+      liveHref: "https://github.com/cWalsh-developer/ModernPacMan",
+      sourceHref: "https://github.com/cWalsh-developer/ModernPacMan",
+    },
+    {
+      title: "EmployeeAccess Facial Detection System",
+      description:
+        "A full-stack employee access system that uses face recognition for secure entry, monitoring, and access control.",
+      image: "/projects/cv-recognition.png",
+      tags: ["Computer Vision", "Security", "Backend"],
+      gradient: "from-emerald-500 to-cyan-500",
+      liveHref: "https://github.com/CV-Recognition",
+      sourceHref: "https://github.com/CV-Recognition",
     },
   ],
-} as const
+} as const;

@@ -1,39 +1,29 @@
-import { Cloud, Code, Cpu, Database, Rocket, Wand2 } from 'lucide-react'
+import { BrainCircuit, Code, Database, MessagesSquare, Smartphone } from 'lucide-react'
 import { motion } from 'motion/react'
 import { portfolio } from '../../content/portfolio'
 
-const skillMeta = [
-  {
-    category: 'Frontend Systems',
-    icon: Code,
-    color: 'from-primary to-blue-400',
-  },
-  {
-    category: 'UI Engineering',
-    icon: Wand2,
-    color: 'from-accent to-purple-400',
-  },
-  {
-    category: 'Product Delivery',
-    icon: Cpu,
-    color: 'from-cyan-400 to-primary',
-  },
-  {
-    category: 'Backend Familiarity',
+const skillMeta = {
+  'Backend Development': {
     icon: Database,
     color: 'from-blue-500 to-cyan-400',
   },
-  {
-    category: 'Visual Interests',
-    icon: Rocket,
+  'Frontend Development': {
+    icon: Code,
+    color: 'from-primary to-blue-400',
+  },
+  'Mobile Development': {
+    icon: Smartphone,
     color: 'from-purple-500 to-secondary',
   },
-  {
-    category: 'Working Style',
-    icon: Cloud,
-    color: 'from-pink-500 to-accent',
+  'AI Capabilities': {
+    icon: BrainCircuit,
+    color: 'from-accent to-purple-400',
   },
-]
+  Workflow: {
+    icon: MessagesSquare,
+    color: 'from-emerald-500 to-cyan-400',
+  },
+} as const
 
 export function Skills() {
   return (
@@ -59,7 +49,7 @@ export function Skills() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {portfolio.skills.map((skill, index) => {
-            const meta = skillMeta[index]
+            const meta = skillMeta[skill.category as keyof typeof skillMeta]
             const Icon = meta.icon
 
             return (

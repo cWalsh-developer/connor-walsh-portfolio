@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Send, Twitter } from 'lucide-react'
+import { Github, Instagram, Linkedin, Mail, Send } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useState } from 'react'
 import { portfolio } from '../../content/portfolio'
@@ -12,13 +12,21 @@ export function Contact() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    console.log('Form submitted:', formState)
+    const subject = `Portfolio enquiry from ${formState.name || 'Website visitor'}`
+    const body = [
+      `Name: ${formState.name}`,
+      `Email: ${formState.email}`,
+      '',
+      formState.message,
+    ].join('\n')
+
+    window.location.href = `mailto:${portfolio.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   const socialLinks = [
     { icon: Github, label: 'GitHub', href: portfolio.socialLinks[0].href },
     { icon: Linkedin, label: 'LinkedIn', href: portfolio.socialLinks[1].href },
-    { icon: Twitter, label: 'X', href: portfolio.socialLinks[2].href },
+    { icon: Instagram, label: 'Instagram', href: portfolio.socialLinks[2].href },
     { icon: Mail, label: 'Email', href: `mailto:${portfolio.contact.email}` },
   ]
 
@@ -41,7 +49,7 @@ export function Contact() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Open to collaborations, product builds, and frontend-focused opportunities.
+            Open to collaborations, product builds, and opportunities across backend, mobile, and full-stack work.
           </p>
         </motion.div>
 
@@ -59,6 +67,7 @@ export function Contact() {
                 <input
                   type="text"
                   id="name"
+                  required
                   value={formState.name}
                   onChange={(event) => setFormState({ ...formState, name: event.target.value })}
                   className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
@@ -73,6 +82,7 @@ export function Contact() {
                 <input
                   type="email"
                   id="email"
+                  required
                   value={formState.email}
                   onChange={(event) => setFormState({ ...formState, email: event.target.value })}
                   className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
@@ -86,6 +96,7 @@ export function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  required
                   value={formState.message}
                   onChange={(event) => setFormState({ ...formState, message: event.target.value })}
                   rows={6}

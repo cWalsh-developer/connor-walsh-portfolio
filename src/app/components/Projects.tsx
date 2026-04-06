@@ -3,6 +3,59 @@ import { motion } from 'motion/react'
 import { portfolio } from '../../content/portfolio'
 import { ImageFallback } from './ImageFallback'
 
+function ProjectVisual({
+  image,
+  mobileImage,
+  title,
+  gradient,
+  imageFit,
+}: {
+  image: string
+  mobileImage?: string
+  title: string
+  gradient: string
+  imageFit?: 'cover' | 'contain'
+}) {
+  if (!mobileImage) {
+    return (
+      <>
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/20 to-accent/20 mix-blend-overlay" />
+        <ImageFallback
+          src={image}
+          alt={title}
+          className={`h-full w-full ${imageFit === 'contain' ? 'object-contain p-2 md:p-3' : 'object-cover'}`}
+        />
+        <motion.div
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-20`}
+        />
+      </>
+    )
+  }
+
+  return (
+    <>
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/18 to-accent/12 mix-blend-screen" />
+      <ImageFallback src={image} alt={`${title} desktop view`} className="h-full w-full object-cover object-top" />
+      <div className="absolute right-2 bottom-2 z-20 rounded-[1.8rem] bg-[#0a0d14] p-1.5 shadow-[0_20px_45px_rgba(0,0,0,0.42)] ring-1 ring-white/10">
+        <div className="w-[92px] rounded-[1.35rem] bg-black p-1.5 md:w-[108px]">
+          <div className="mx-auto mb-1.5 h-1 w-10 rounded-full bg-white/10" />
+          <div className="overflow-hidden rounded-[1.1rem] border border-white/8">
+            <ImageFallback
+              src={mobileImage}
+              alt={`${title} mobile app view`}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="mx-auto mt-1.5 h-1 w-7 rounded-full bg-white/10" />
+        </div>
+      </div>
+      <motion.div
+        className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-18`}
+      />
+    </>
+  )
+}
+
 export function Projects() {
   return (
     <section id="projects" className="relative overflow-hidden px-6 py-32">
@@ -50,15 +103,12 @@ export function Projects() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/20 to-accent/20 mix-blend-overlay" />
-                    <ImageFallback
-                      src={project.image}
-                      alt={project.title}
-                      className="h-full w-full object-cover"
-                    />
-
-                    <motion.div
-                      className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-20`}
+                    <ProjectVisual
+                      image={project.image}
+                      mobileImage={'mobileImage' in project ? project.mobileImage : undefined}
+                      title={project.title}
+                      gradient={project.gradient}
+                      imageFit={'imageFit' in project ? project.imageFit : undefined}
                     />
                   </motion.div>
 
