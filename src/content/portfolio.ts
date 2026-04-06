@@ -17,8 +17,8 @@ export const portfolio = {
     href: "#contact",
   },
   resume: {
-    label: "Resume",
-    href: "#contact",
+    label: "My CV",
+    href: "#/cv",
   },
   contact: {
     email: "connor_w_98@hotmail.com",
@@ -38,7 +38,7 @@ export const portfolio = {
     },
     {
       category: "Frontend Development",
-      items: ["React", "CSS", "HTML", "Vanilla JavaScript"],
+      items: ["React", "CSS", "HTML", "Vanilla JavaScript", "Java"],
     },
     {
       category: "Mobile Development",

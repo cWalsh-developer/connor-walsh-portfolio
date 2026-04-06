@@ -108,7 +108,12 @@ export function Projects() {
                       mobileImage={'mobileImage' in project ? project.mobileImage : undefined}
                       title={project.title}
                       gradient={project.gradient}
-                      imageFit={'imageFit' in project ? project.imageFit : undefined}
+                      imageFit={
+                        'imageFit' in project &&
+                        (project.imageFit === 'cover' || project.imageFit === 'contain')
+                          ? project.imageFit
+                          : undefined
+                      }
                     />
                   </motion.div>
 

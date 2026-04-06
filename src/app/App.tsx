@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import { Contact } from './components/Contact'
+import { CvPage } from './components/CvPage'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Navigation } from './components/Navigation'
@@ -6,6 +8,19 @@ import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 
 export default function App() {
+  const [route, setRoute] = useState(window.location.hash)
+
+  useEffect(() => {
+    const handleHashChange = () => setRoute(window.location.hash)
+
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  if (route === '#/cv') {
+    return <CvPage />
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
