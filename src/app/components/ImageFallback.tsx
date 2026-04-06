@@ -6,6 +6,13 @@ const ERROR_IMG_SRC =
 export function ImageFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   const [didError, setDidError] = useState(false)
   const { src, alt, style, className, ...rest } = props
+  const baseUrl = (
+    (import.meta as ImportMeta & { env?: { BASE_URL?: string } }).env?.BASE_URL ?? ''
+  ).replace(/\/$/, '')
+  const resolvedSrc =
+    typeof src === 'string' && src.startsWith('/') && !src.startsWith(baseUrl)
+      ? `${baseUrl}${src}`
+      : src
 
   if (didError) {
     return (
@@ -14,7 +21,7 @@ export function ImageFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) 
         style={style}
       >
         <div className="flex h-full w-full items-center justify-center">
-          <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={src} />
+          <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={resolvedSrc} />
         </div>
       </div>
     )
@@ -22,7 +29,7 @@ export function ImageFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) 
 
   return (
     <img
-      src={src}
+      src={resolvedSrc}
       alt={alt}
       className={className}
       style={style}
