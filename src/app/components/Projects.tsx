@@ -1,6 +1,6 @@
 import { ExternalLink, Github, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
-import { ImageWithFallback } from './figma/ImageWithFallback'
+import { ImageFallback } from './ImageFallback'
 
 const projects = [
   {
@@ -78,7 +78,7 @@ export function Projects() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/20 to-accent/20 mix-blend-overlay" />
-                    <ImageWithFallback
+                    <ImageFallback
                       src={project.image}
                       alt={project.title}
                       className="h-full w-full object-cover"
