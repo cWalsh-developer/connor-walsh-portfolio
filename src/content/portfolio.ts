@@ -67,7 +67,7 @@ export const portfolio = {
       mobileImage: "/projects/PhunParty_Mobile_App.jpg",
       tags: ["Full Stack", "Social App", "Product Build"],
       gradient: "from-cyan-500 to-blue-500",
-      liveHref: "https://github.com/cWalsh-developer/PhunParty",
+      liveHref: "https://phun.party",
       sourceHref: "https://github.com/cWalsh-developer/PhunParty",
     },
     {
@@ -87,7 +87,7 @@ export const portfolio = {
       image: "/projects/Screenshot 2026-04-06 021654.png",
       tags: ["Game Project", "Frontend", "Creative Build"],
       gradient: "from-blue-500 to-violet-500",
-      liveHref: "https://github.com/cWalsh-developer/ModernPacMan",
+      liveHref: "https://cwalsh-developer.github.io/ModernPacMan/",
       sourceHref: "https://github.com/cWalsh-developer/ModernPacMan",
     },
     {
