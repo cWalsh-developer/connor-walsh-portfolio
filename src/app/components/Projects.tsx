@@ -37,17 +37,17 @@ function ProjectVisual({
     <>
       <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/18 to-accent/12 mix-blend-screen" />
       <ImageFallback src={image} alt={`${title} desktop view`} className="h-full w-full object-cover object-top" />
-      <div className="absolute right-1.5 bottom-1.5 z-20 rounded-[1.4rem] bg-[#0a0d14] p-1 shadow-[0_16px_35px_rgba(0,0,0,0.38)] ring-1 ring-white/10 sm:right-2 sm:bottom-2 sm:rounded-[1.8rem] sm:p-1.5">
-        <div className="w-[68px] rounded-[1rem] bg-black p-1 sm:w-[92px] sm:rounded-[1.35rem] sm:p-1.5 md:w-[108px]">
-          <div className="mx-auto mb-1 h-1 w-8 rounded-full bg-white/10 sm:mb-1.5 sm:w-10" />
-          <div className="overflow-hidden rounded-[0.8rem] border border-white/8 sm:rounded-[1.1rem]">
+      <div className="absolute right-1 bottom-1 z-20 rounded-[0.95rem] bg-[#0a0d14] p-0.5 shadow-[0_12px_26px_rgba(0,0,0,0.36)] ring-1 ring-white/10 sm:right-2 sm:bottom-2 sm:rounded-[1.45rem] sm:p-1 md:rounded-[1.7rem] md:p-1.5">
+        <div className="w-[38px] rounded-[0.72rem] bg-black p-0.5 sm:w-[62px] sm:rounded-[1.02rem] sm:p-1 md:w-[84px] md:rounded-[1.2rem]">
+          <div className="mx-auto mb-0.5 h-[2px] w-4 rounded-full bg-white/10 sm:mb-1 sm:h-[3px] sm:w-7" />
+          <div className="overflow-hidden rounded-[0.56rem] border border-white/8 sm:rounded-[0.84rem] md:rounded-[1rem]">
             <ImageFallback
               src={mobileImage}
               alt={`${title} mobile app view`}
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="mx-auto mt-1 h-1 w-5 rounded-full bg-white/10 sm:mt-1.5 sm:w-7" />
+          <div className="mx-auto mt-0.5 h-[2px] w-3 rounded-full bg-white/10 sm:mt-1 sm:h-[3px] sm:w-5" />
         </div>
       </div>
       <motion.div
