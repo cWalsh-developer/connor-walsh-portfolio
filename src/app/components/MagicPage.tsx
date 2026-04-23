@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, BookOpenText, Sparkles, Theater, Users } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { ReadableParagraph } from './ReadableParagraph'
 
 const PERFORMANCE_START_YEAR = 2008
 const PSYCHOLOGY_START_YEAR = 2014
@@ -47,11 +48,12 @@ export function MagicPage() {
           <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-transparent px-5 py-8 sm:px-7 sm:py-9 md:px-12 md:py-10">
             <p className="mb-3 text-sm font-semibold tracking-[0.35em] text-primary uppercase">{t('magicPage.badge')}</p>
             <h1 className="mb-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">{t('magicPage.title')}</h1>
-            <p className="max-w-4xl text-base leading-7 text-foreground/90 sm:text-lg sm:leading-8">
-              {t('magicPage.description', {
+            <ReadableParagraph
+              text={t('magicPage.description', {
                 yearsInPsychology,
               })}
-            </p>
+              className="max-w-4xl text-base leading-7 text-foreground/90 sm:text-lg sm:leading-8"
+            />
           </div>
 
           <div className="space-y-8 px-5 py-8 sm:space-y-10 sm:px-7 sm:py-9 md:space-y-12 md:px-12 md:py-10">
@@ -107,7 +109,7 @@ export function MagicPage() {
             <section>
               <SectionHeading title={t('magicPage.notableTitle')} />
               <div className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
-                <p className="leading-7 text-foreground/90">{t('magicPage.notableDescription')}</p>
+                <ReadableParagraph text={t('magicPage.notableDescription')} className="leading-7 text-foreground/90" />
               </div>
             </section>
 
@@ -116,7 +118,9 @@ export function MagicPage() {
               <div className="space-y-6">
                 <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                   <h3 className="text-xl font-semibold">{t('magicPage.consultingTitle')}</h3>
-                  <p className="mt-3 leading-7 text-foreground/90">{t('magicPage.consultingDescription')}</p>
+                  <div className="mt-3">
+                    <ReadableParagraph text={t('magicPage.consultingDescription')} className="leading-7 text-foreground/90" />
+                  </div>
                 </article>
 
                 <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
@@ -124,14 +128,16 @@ export function MagicPage() {
                     <BookOpenText className="h-5 w-5 text-primary" />
                     <h3 className="text-xl font-semibold">{t('magicPage.writingTitle')}</h3>
                   </div>
-                  <p className="leading-7 text-foreground/90">{t('magicPage.writingDescription')}</p>
+                  <ReadableParagraph text={t('magicPage.writingDescription')} className="leading-7 text-foreground/90" />
                 </article>
               </div>
             </section>
 
             <section className="rounded-2xl border border-border bg-gradient-to-r from-primary/10 via-transparent to-transparent p-5 sm:p-6">
               <p className="text-sm font-semibold tracking-[0.25em] text-primary uppercase">{t('magicPage.developerLabel')}</p>
-              <p className="mt-3 max-w-3xl leading-7 text-foreground/90">{t('magicPage.developerDescription')}</p>
+              <div className="mt-3 max-w-3xl">
+                <ReadableParagraph text={t('magicPage.developerDescription')} className="leading-7 text-foreground/90" />
+              </div>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
                   href="#/about"

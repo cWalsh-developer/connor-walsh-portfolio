@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, Briefcase, Brain, GraduationCap, Route } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { ReadableParagraph } from './ReadableParagraph'
 
 const CAREER_START_YEAR = 2018
 
@@ -45,11 +46,12 @@ export function AboutPage() {
           <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-transparent px-5 py-8 sm:px-7 sm:py-9 md:px-12 md:py-10">
             <p className="mb-3 text-sm font-semibold tracking-[0.35em] text-primary uppercase">{t('aboutPage.badge')}</p>
             <h1 className="mb-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">{t('aboutPage.title')}</h1>
-            <p className="max-w-4xl text-base leading-7 text-foreground/90 sm:text-lg sm:leading-8">
-              {t('aboutPage.description', {
+            <ReadableParagraph
+              text={t('aboutPage.description', {
                 yearsOfExperience,
               })}
-            </p>
+              className="max-w-4xl text-base leading-7 text-foreground/90 sm:text-lg sm:leading-8"
+            />
           </div>
 
           <div className="space-y-8 px-5 py-8 sm:space-y-10 sm:px-7 sm:py-9 md:space-y-12 md:px-12 md:py-10">
@@ -84,7 +86,7 @@ export function AboutPage() {
                     <Route className="h-5 w-5 text-primary" />
                     <h3 className="text-xl font-semibold">{t('aboutPage.safeMapTitle')}</h3>
                   </div>
-                  <p className="leading-7 text-foreground/90">{t('aboutPage.safeMapDescription')}</p>
+                  <ReadableParagraph text={t('aboutPage.safeMapDescription')} className="leading-7 text-foreground/90" />
                 </article>
 
                 <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
@@ -92,7 +94,7 @@ export function AboutPage() {
                     <Brain className="h-5 w-5 text-primary" />
                     <h3 className="text-xl font-semibold">{t('aboutPage.greenWasteTitle')}</h3>
                   </div>
-                  <p className="leading-7 text-foreground/90">{t('aboutPage.greenWasteDescription')}</p>
+                  <ReadableParagraph text={t('aboutPage.greenWasteDescription')} className="leading-7 text-foreground/90" />
                 </article>
               </div>
             </section>
@@ -117,7 +119,9 @@ export function AboutPage() {
 
             <section className="rounded-2xl border border-border bg-gradient-to-r from-primary/10 via-transparent to-transparent p-5 sm:p-6">
               <p className="text-sm font-semibold tracking-[0.25em] text-primary uppercase">{t('aboutPage.beyondLabel')}</p>
-              <p className="mt-3 max-w-3xl leading-7 text-foreground/90">{t('aboutPage.beyondDescription')}</p>
+              <div className="mt-3 max-w-3xl">
+                <ReadableParagraph text={t('aboutPage.beyondDescription')} className="leading-7 text-foreground/90" />
+              </div>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
                   href="#/magic"
