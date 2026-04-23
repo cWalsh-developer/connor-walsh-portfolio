@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { motion } from 'motion/react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { usePortfolioContent } from '../../content/portfolio'
 import { LanguageSwitcher } from './LanguageSwitcher'
@@ -13,8 +13,28 @@ type NavItem = {
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const navRef = useRef<HTMLElement | null>(null)
   const { t } = useTranslation()
   const portfolio = usePortfolioContent()
+
+  useEffect(() => {
+    if (!isOpen) {
+      return
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!navRef.current) {
+        return
+      }
+
+      if (!navRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    return () => document.removeEventListener('pointerdown', handlePointerDown)
+  }, [isOpen])
 
   const navItems: NavItem[] = [
     { label: t('navigation.about'), href: '#/about', mode: 'route' },
@@ -54,6 +74,7 @@ export function Navigation() {
 
   return (
     <motion.nav
+      ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/80 bg-background/78 backdrop-blur-2xl"
