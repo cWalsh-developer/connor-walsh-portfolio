@@ -36,9 +36,9 @@ export function Footer() {
             viewport={{ once: true }}
             className="flex items-center gap-2 text-sm text-muted-foreground"
           >
-            <span>{`\u00A9 ${year} ${t('footer.builtWith')}`}</span>
+            <span>{`\u00A9 ${year} ${portfolio.name}`}</span>
             <span className="h-1 w-1 rounded-full bg-primary/80" />
-            <span>{t('footer.forProducts')}</span>
+            <span>{t('footer.tagline')}</span>
           </motion.div>
         </div>
 

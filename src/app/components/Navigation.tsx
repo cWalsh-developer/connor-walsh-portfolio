@@ -58,6 +58,15 @@ export function Navigation() {
         return
       }
 
+      const isMobileViewport = window.matchMedia('(max-width: 767px)').matches
+      if (isMobileViewport && item.href === '#contact') {
+        const contactForm = document.querySelector('#contact form')
+        if (contactForm) {
+          contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          return
+        }
+      }
+
       const navHeight = document.querySelector('nav')?.getBoundingClientRect().height ?? 0
       const targetTop = window.scrollY + element.getBoundingClientRect().top - navHeight - 12
 
