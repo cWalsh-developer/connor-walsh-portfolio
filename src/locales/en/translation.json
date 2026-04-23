@@ -1,0 +1,216 @@
+{
+  "languages": {
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German"
+  },
+  "navigation": {
+    "about": "About",
+    "auto": "Auto",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "My CV",
+    "language": "Language"
+  },
+  "portfolio": {
+    "role": "Full Stack Developer",
+    "badge": "Backend systems / Mobile apps / Product builds",
+    "brandStatement": "Full-stack developer focused on backend systems and mobile-first product builds.",
+    "intro": "I am currently a Software Engineer at BAE Systems, and outside of work I am especially drawn to backend and mobile-focused builds.",
+    "summary": "I build clean, maintainable products that are practical to ship and enjoyable to use.",
+    "primaryCta": "View Projects",
+    "secondaryCta": "Get In Touch",
+    "contactNote": "The links below go directly to my real profiles and email.",
+    "availability": "Currently working full-time at BAE Systems and always happy to connect with other developers, teams, and interesting projects.",
+    "skills": {
+      "backend": {
+        "category": "Backend Development",
+        "items": ["MySQL", "FastAPI", "PostgreSQL", "PHP", "Firebase", "MongoDB"]
+      },
+      "frontend": {
+        "category": "Frontend Development",
+        "items": ["React", "CSS", "HTML", "Vanilla JavaScript", "Java"]
+      },
+      "mobile": {
+        "category": "Mobile Development",
+        "items": ["React Native", "Expo", "Kotlin", "Jetpack Compose"]
+      },
+      "ai": {
+        "category": "AI Capabilities",
+        "items": ["TensorFlow", "Scikit-learn", "PyTorch", "CNN and NN architectures"]
+      },
+      "workflow": {
+        "category": "Workflow",
+        "items": [
+          "Agile delivery",
+          "Clear team communication",
+          "Stakeholder collaboration",
+          "Clean design and code structure"
+        ]
+      }
+    },
+    "projects": {
+      "phunparty": {
+        "title": "PhunParty",
+        "description": "A multiplayer party quiz game where players use their mobile devices to participate, and a shared host screen runs the session in real time.",
+        "tags": ["Full Stack", "Social App", "Product Build"]
+      },
+      "cvbuilder": {
+        "title": "CVBuilder",
+        "description": "A Java Swing desktop app for building structured CVs through a guided interface and exporting them as CSV files.",
+        "tags": ["Productivity", "Full Stack", "UX"]
+      },
+      "pacbloke": {
+        "title": "PacBloke / ModernPacMan",
+        "description": "A hard-mode Pac-Man remake with split powers, teleport abilities, inverse mode, and a modern browser-based presentation.",
+        "tags": ["Game Project", "Frontend", "Creative Build"]
+      },
+      "employeeaccess": {
+        "title": "EmployeeAccess Facial Detection System",
+        "description": "A full-stack employee access system that uses face recognition for secure entry, monitoring, and access control.",
+        "tags": ["Computer Vision", "Security", "Backend"]
+      }
+    }
+  },
+  "skillsSection": {
+    "title": "Core Strengths",
+    "subtitle": "The areas I focus on when turning concepts into polished products."
+  },
+  "projectsSection": {
+    "badge": "FEATURED WORK",
+    "title": "Featured Projects",
+    "subtitle": "A few project directions that show how I approach product, layout, and frontend craft.",
+    "livePreview": "Live Preview",
+    "sourceCode": "Source Code"
+  },
+  "contactSection": {
+    "title": "Let's Connect",
+    "subtitle": "Open to collaborations, product builds, and opportunities across backend, mobile, and full-stack work.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Tell me a bit about the project, timeline, or role.",
+    "sendMessage": "Send Message",
+    "getInTouch": "Get in Touch",
+    "findMeOnline": "Find me online",
+    "availableForProjects": "Available for Projects",
+    "emailSubject": "Portfolio enquiry from {{name}}",
+    "websiteVisitor": "Website visitor"
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "forProducts": "for ambitious digital products"
+  },
+  "cvPage": {
+    "backToPortfolio": "Back to Portfolio",
+    "curriculumVitae": "Curriculum Vitae",
+    "contactLabel": "Contact",
+    "professionalExperience": "Professional Experience",
+    "technicalSkills": "Technical Skills",
+    "transferableSkills": "Transferable Skills",
+    "hobbiesInterests": "Hobbies & Interests",
+    "education": "Education"
+  },
+  "cv": {
+    "title": "Software Engineer",
+    "summary": "Computer Science graduate with hands-on experience in Python, Java, SQL, and Kotlin, with a strong interest in backend and mobile systems that connect to real-world APIs.",
+    "profile": "AWS Certified Cloud Practitioner with practical experience using Git-based workflows and collaborating in small teams. I care about writing clean code, solving problems thoughtfully, and learning quickly.",
+    "education": {
+      "msc_ai": {
+        "qualification": "Master of Science in Artificial Intelligence",
+        "institution": "Kingston University",
+        "period": "September 2025 - September 2026",
+        "notes": ["Currently studying"]
+      },
+      "bsc_cs": {
+        "qualification": "Bachelor of Science in Computer Science",
+        "institution": "Kingston University",
+        "period": "September 2022 - June 2025",
+        "notes": ["Grade: First-class"]
+      },
+      "ocr_it_l3": {
+        "qualification": "OCR IT Level 3 Cambridge Technical Extended Diploma",
+        "institution": "North Hertfordshire College",
+        "period": "September 2017 - June 2021",
+        "notes": ["Grade: Triple Distinction*"]
+      },
+      "ncfe_employability": {
+        "qualification": "NCFE Level 2 Award in Employability Skills",
+        "institution": "North Hertfordshire College",
+        "period": "September 2017 - June 2021",
+        "notes": ["Modules included: Understanding Mindset", "Problem-Solving in a Workplace"]
+      },
+      "ocr_it_l2": {
+        "qualification": "OCR IT Level 2 Cambridge Technical Diploma",
+        "institution": "North Hertfordshire College",
+        "period": "September 2017 - June 2021",
+        "notes": ["Grade: Distinction*"]
+      },
+      "customer_service": {
+        "qualification": "City & Guilds Entry Level Award for Introduction to Customer Service (Entry 3)",
+        "institution": "North Hertfordshire College",
+        "period": "September 2017 - June 2021",
+        "notes": []
+      },
+      "gcses": {
+        "qualification": "GCSEs",
+        "institution": "North Hertfordshire College",
+        "period": "September 2017 - June 2021",
+        "notes": ["2 subjects between 9-5, including English (6) and Maths (4)"]
+      }
+    },
+    "experience": {
+      "software_engineer": {
+        "role": "Software Engineer",
+        "organisation": "BAE Systems",
+        "period": "Current",
+        "summary": "Currently working as a Software Engineer within a professional engineering environment."
+      },
+      "peer_mentor": {
+        "role": "Academic Peer Mentor",
+        "organisation": "Kingston University",
+        "period": "September 16, 2023 - March 31, 2024",
+        "summary": "Assisted in workshops to help lower-level students understand programming concepts more confidently."
+      },
+      "dementia_presenter": {
+        "role": "Technology Presenter to Dementia Patients",
+        "organisation": "Guysfield Care Home",
+        "period": "February 24 - February 28, 2020",
+        "summary": "Used presentation software to create a memory box presentation for residents living with dementia."
+      },
+      "computer_builder": {
+        "role": "Computer Builder",
+        "organisation": "Lister Hospital IT Department at Wiltron House",
+        "period": "March 4 - March 8, 2019",
+        "summary": "Built a PC and installed the required software and updates for the QE2 hospital."
+      },
+      "technology_advisor": {
+        "role": "Technology Advisor to the Elderly",
+        "organisation": "Westmill Community Centre",
+        "period": "April 19 - June 28, 2018",
+        "summary": "Helped people better understand technology and how to use it safely."
+      }
+    },
+    "technicalSkills": [
+      "Python",
+      "SQL and relational databases",
+      "Git and Git-based systems (GitHub and Bitbucket)",
+      "Good knowledge of the agile software development lifecycle",
+      "Java",
+      "Kotlin"
+    ],
+    "transferableSkills": [
+      "Problem-solving",
+      "Good verbal communication and presentation skills",
+      "Good written communication",
+      "Creative thinking",
+      "Good team working",
+      "Versatile"
+    ],
+    "interests": "I enjoy performing as a magician for the public at events such as NCS charities, creating new magic, and collaborating with other magicians to build their shows. I also enjoy learning new things, helping others, science fiction, action and comedy films, and reading educational books."
+  }
+}

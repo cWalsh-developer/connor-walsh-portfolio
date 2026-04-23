@@ -1,8 +1,10 @@
 import { Rocket, Sparkles, Terminal } from 'lucide-react'
 import { motion } from 'motion/react'
-import { portfolio } from '../../content/portfolio'
+import { usePortfolioContent } from '../../content/portfolio'
 
 export function Hero() {
+  const portfolio = usePortfolioContent()
+
   return (
     <section
       id="about"

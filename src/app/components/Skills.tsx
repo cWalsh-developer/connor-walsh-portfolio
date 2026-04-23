@@ -1,31 +1,35 @@
 import { BrainCircuit, Code, Database, MessagesSquare, Smartphone } from 'lucide-react'
 import { motion } from 'motion/react'
-import { portfolio } from '../../content/portfolio'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioContent } from '../../content/portfolio'
 
 const skillMeta = {
-  'Backend Development': {
+  backend: {
     icon: Database,
     color: 'from-blue-500 to-cyan-400',
   },
-  'Frontend Development': {
+  frontend: {
     icon: Code,
     color: 'from-primary to-blue-400',
   },
-  'Mobile Development': {
+  mobile: {
     icon: Smartphone,
     color: 'from-purple-500 to-secondary',
   },
-  'AI Capabilities': {
+  ai: {
     icon: BrainCircuit,
     color: 'from-accent to-purple-400',
   },
-  Workflow: {
+  workflow: {
     icon: MessagesSquare,
     color: 'from-emerald-500 to-cyan-400',
   },
 } as const
 
 export function Skills() {
+  const { t } = useTranslation()
+  const portfolio = usePortfolioContent()
+
   return (
     <section className="relative overflow-hidden px-6 py-32">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
@@ -39,17 +43,17 @@ export function Skills() {
         >
           <h2 className="mb-4 text-5xl">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Core Strengths
+              {t('skillsSection.title')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            The areas I focus on when turning concepts into polished products.
+            {t('skillsSection.subtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {portfolio.skills.map((skill, index) => {
-            const meta = skillMeta[skill.category as keyof typeof skillMeta]
+            const meta = skillMeta[skill.id]
             const Icon = meta.icon
 
             return (

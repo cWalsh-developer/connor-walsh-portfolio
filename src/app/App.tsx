@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Contact } from './components/Contact'
 import { CvPage } from './components/CvPage'
 import { Footer } from './components/Footer'
@@ -6,15 +7,25 @@ import { Hero } from './components/Hero'
 import { Navigation } from './components/Navigation'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
+import { applyAutomaticLocale } from '../i18n'
 
 export default function App() {
   const [route, setRoute] = useState(window.location.hash)
+  const { i18n } = useTranslation()
 
   useEffect(() => {
     const handleHashChange = () => setRoute(window.location.hash)
 
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.resolvedLanguage ?? 'en'
+  }, [i18n.resolvedLanguage])
+
+  useEffect(() => {
+    void applyAutomaticLocale()
   }, [])
 
   if (route === '#/cv') {

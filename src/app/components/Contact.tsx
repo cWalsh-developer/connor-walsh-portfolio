@@ -1,9 +1,13 @@
 import { Github, Instagram, Linkedin, Mail, Send } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useState } from 'react'
-import { portfolio } from '../../content/portfolio'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioContent } from '../../content/portfolio'
 
 export function Contact() {
+  const { t } = useTranslation()
+  const portfolio = usePortfolioContent()
+
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -12,10 +16,12 @@ export function Contact() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    const subject = `Portfolio enquiry from ${formState.name || 'Website visitor'}`
+    const subject = t('contactSection.emailSubject', {
+      name: formState.name || t('contactSection.websiteVisitor'),
+    })
     const body = [
-      `Name: ${formState.name}`,
-      `Email: ${formState.email}`,
+      `${t('contactSection.name')}: ${formState.name}`,
+      `${t('contactSection.email')}: ${formState.email}`,
       '',
       formState.message,
     ].join('\n')
@@ -24,10 +30,10 @@ export function Contact() {
   }
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: portfolio.socialLinks[0].href },
-    { icon: Linkedin, label: 'LinkedIn', href: portfolio.socialLinks[1].href },
-    { icon: Instagram, label: 'Instagram', href: portfolio.socialLinks[2].href },
-    { icon: Mail, label: 'Email', href: `mailto:${portfolio.contact.email}` },
+    { icon: Github, label: portfolio.socialLinks[0].label, href: portfolio.socialLinks[0].href },
+    { icon: Linkedin, label: portfolio.socialLinks[1].label, href: portfolio.socialLinks[1].href },
+    { icon: Instagram, label: portfolio.socialLinks[2].label, href: portfolio.socialLinks[2].href },
+    { icon: Mail, label: t('contactSection.email'), href: `mailto:${portfolio.contact.email}` },
   ]
 
   return (
@@ -45,11 +51,11 @@ export function Contact() {
         >
           <h2 className="mb-4 text-5xl">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Let&apos;s Connect
+              {t('contactSection.title')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Open to collaborations, product builds, and opportunities across backend, mobile, and full-stack work.
+            {t('contactSection.subtitle')}
           </p>
         </motion.div>
 
@@ -62,7 +68,7 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="mb-2 block text-foreground">
-                  Name
+                  {t('contactSection.name')}
                 </label>
                 <input
                   type="text"
@@ -71,13 +77,13 @@ export function Contact() {
                   value={formState.name}
                   onChange={(event) => setFormState({ ...formState, name: event.target.value })}
                   className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  placeholder="Your name"
+                  placeholder={t('contactSection.namePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="mb-2 block text-foreground">
-                  Email
+                  {t('contactSection.email')}
                 </label>
                 <input
                   type="email"
@@ -86,13 +92,13 @@ export function Contact() {
                   value={formState.email}
                   onChange={(event) => setFormState({ ...formState, email: event.target.value })}
                   className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  placeholder="you@example.com"
+                  placeholder={t('contactSection.emailPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="mb-2 block text-foreground">
-                  Message
+                  {t('contactSection.message')}
                 </label>
                 <textarea
                   id="message"
@@ -101,7 +107,7 @@ export function Contact() {
                   onChange={(event) => setFormState({ ...formState, message: event.target.value })}
                   rows={6}
                   className="w-full resize-none rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  placeholder="Tell me a bit about the project, timeline, or role."
+                  placeholder={t('contactSection.messagePlaceholder')}
                 />
               </div>
 
@@ -111,7 +117,7 @@ export function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-primary-foreground"
               >
-                <span>Send Message</span>
+                <span>{t('contactSection.sendMessage')}</span>
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </motion.button>
             </form>
@@ -124,7 +130,7 @@ export function Contact() {
             className="space-y-8"
           >
             <div className="space-y-6 rounded-2xl border border-border bg-card p-8">
-              <h3 className="text-2xl">Get in Touch</h3>
+              <h3 className="text-2xl">{t('contactSection.getInTouch')}</h3>
 
               <p className="text-muted-foreground">{portfolio.intro}</p>
 
@@ -138,7 +144,7 @@ export function Contact() {
               <p className="text-sm text-muted-foreground">{portfolio.contact.note}</p>
 
               <div className="border-t border-border pt-6">
-                <p className="mb-4 text-sm text-muted-foreground">Find me online</p>
+                <p className="mb-4 text-sm text-muted-foreground">{t('contactSection.findMeOnline')}</p>
                 <div className="flex gap-4">
                   {socialLinks.map((link) => (
                     <motion.a
@@ -163,7 +169,7 @@ export function Contact() {
               <div className="flex items-start gap-4">
                 <div className="mt-1.5 h-3 w-3 animate-pulse rounded-full bg-green-500" />
                 <div>
-                  <h4 className="mb-2">Available for Projects</h4>
+                  <h4 className="mb-2">{t('contactSection.availableForProjects')}</h4>
                   <p className="text-sm text-muted-foreground">{portfolio.contact.availability}</p>
                 </div>
               </div>

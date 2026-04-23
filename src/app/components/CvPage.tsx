@@ -1,6 +1,7 @@
 import { ArrowLeft, Mail } from 'lucide-react'
 import { motion } from 'motion/react'
-import { cv } from '../../content/cv'
+import { useTranslation } from 'react-i18next'
+import { useCvContent } from '../../content/cv'
 
 function SectionHeading({ title }: { title: string }) {
   return (
@@ -13,6 +14,9 @@ function SectionHeading({ title }: { title: string }) {
 }
 
 export function CvPage() {
+  const { t } = useTranslation()
+  const cv = useCvContent()
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="absolute inset-0 overflow-hidden">
@@ -27,7 +31,7 @@ export function CvPage() {
             className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Portfolio
+            {t('cvPage.backToPortfolio')}
           </a>
         </motion.div>
 
@@ -40,7 +44,7 @@ export function CvPage() {
           <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-accent/8 px-8 py-10 md:px-12">
             <div className="grid gap-8 md:grid-cols-[1.3fr_0.9fr]">
               <div>
-                <p className="mb-3 text-sm font-semibold tracking-[0.35em] text-primary uppercase">Curriculum Vitae</p>
+                <p className="mb-3 text-sm font-semibold tracking-[0.35em] text-primary uppercase">{t('cvPage.curriculumVitae')}</p>
                 <h1 className="mb-2 text-5xl font-semibold tracking-tight">{cv.name}</h1>
                 <p className="mb-5 text-xl text-muted-foreground">{cv.title}</p>
                 <p className="max-w-3xl text-lg leading-8 text-foreground/90">{cv.summary}</p>
@@ -48,7 +52,7 @@ export function CvPage() {
               </div>
 
               <div className="rounded-2xl border border-border bg-background/45 p-6">
-                <p className="mb-5 text-sm font-semibold tracking-[0.3em] text-primary uppercase">Contact</p>
+                <p className="mb-5 text-sm font-semibold tracking-[0.3em] text-primary uppercase">{t('cvPage.contactLabel')}</p>
                 <div className="space-y-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-primary" />
@@ -69,7 +73,7 @@ export function CvPage() {
           <div className="space-y-12 px-8 py-10 md:px-12">
             <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
               <section>
-                <SectionHeading title="Professional Experience" />
+                <SectionHeading title={t('cvPage.professionalExperience')} />
                 <div className="space-y-6">
                   {cv.experience.map((item) => (
                     <div key={`${item.role}-${item.organisation}`} className="rounded-2xl border border-border bg-background/35 p-6">
@@ -88,7 +92,7 @@ export function CvPage() {
 
               <div className="space-y-8">
                 <section className="rounded-2xl border border-border bg-background/35 p-6">
-                  <SectionHeading title="Technical Skills" />
+                  <SectionHeading title={t('cvPage.technicalSkills')} />
                   <ul className="space-y-3">
                     {cv.technicalSkills.map((skill) => (
                       <li key={skill} className="flex items-start gap-3 text-foreground/90">
@@ -100,7 +104,7 @@ export function CvPage() {
                 </section>
 
                 <section className="rounded-2xl border border-border bg-background/35 p-6">
-                  <SectionHeading title="Transferable Skills" />
+                  <SectionHeading title={t('cvPage.transferableSkills')} />
                   <ul className="space-y-3">
                     {cv.transferableSkills.map((skill) => (
                       <li key={skill} className="flex items-start gap-3 text-foreground/90">
@@ -112,14 +116,14 @@ export function CvPage() {
                 </section>
 
                 <section className="rounded-2xl border border-border bg-background/35 p-6">
-                  <SectionHeading title="Hobbies & Interests" />
+                  <SectionHeading title={t('cvPage.hobbiesInterests')} />
                   <p className="leading-7 text-foreground/90">{cv.interests}</p>
                 </section>
               </div>
             </div>
 
             <section>
-              <SectionHeading title="Education" />
+              <SectionHeading title={t('cvPage.education')} />
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {cv.education.map((item) => (
                   <div

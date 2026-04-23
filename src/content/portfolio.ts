@@ -1,104 +1,98 @@
-export const portfolio = {
-  name: "Connor Walsh",
-  role: "Full Stack Developer",
-  badge: "Backend systems / Mobile apps / Product builds",
-  brandStatement:
-    "Full-stack developer focused on backend systems and mobile-first product builds.",
-  intro:
-    "I am currently a Software Engineer at BAE Systems, and outside of work I am especially drawn to backend and mobile-focused builds.",
-  summary:
-    "I build clean, maintainable products that are practical to ship and enjoyable to use.",
-  primaryCta: {
-    label: "View Projects",
-    href: "#projects",
+import { useTranslation } from 'react-i18next'
+
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/cWalsh-developer' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/connorwalsh98/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/connorwalsh_98/' },
+] as const
+
+const skillIds = ['backend', 'frontend', 'mobile', 'ai', 'workflow'] as const
+type SkillId = (typeof skillIds)[number]
+
+const projectConfig = {
+  cvbuilder: {
+    gradient: 'from-purple-500 to-pink-500',
+    image: '/projects/Edit_Referee.png',
+    liveHref: 'https://github.com/cWalsh-developer/CV_Builder',
+    sourceHref: 'https://github.com/cWalsh-developer/CV_Builder',
   },
-  secondaryCta: {
-    label: "Get In Touch",
-    href: "#contact",
+  employeeaccess: {
+    gradient: 'from-emerald-500 to-cyan-500',
+    image: '/projects/cv-recognition.png',
+    liveHref: 'https://github.com/CV-Recognition',
+    sourceHref: 'https://github.com/CV-Recognition',
   },
-  resume: {
-    label: "My CV",
-    href: "#/cv",
+  pacbloke: {
+    gradient: 'from-blue-500 to-violet-500',
+    image: '/projects/Screenshot 2026-04-06 021654.png',
+    liveHref: 'https://cwalsh-developer.github.io/ModernPacMan/',
+    sourceHref: 'https://github.com/cWalsh-developer/ModernPacMan',
   },
-  contact: {
-    email: "connor_w_98@hotmail.com",
-    note: "The links below go directly to my real profiles and email.",
-    availability:
-      "Currently working full-time at BAE Systems and always happy to connect with other developers, teams, and interesting projects.",
+  phunparty: {
+    gradient: 'from-cyan-500 to-blue-500',
+    image: '/projects/Screenshot 2026-04-06 030949.png',
+    liveHref: 'https://phun.party',
+    mobileImage: '/projects/PhunParty_Mobile_App.jpg',
+    sourceHref: 'https://github.com/cWalsh-developer/PhunParty',
   },
-  socialLinks: [
-    { label: "GitHub", href: "https://github.com/cWalsh-developer" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/connorwalsh98/" },
-    { label: "Instagram", href: "https://www.instagram.com/connorwalsh_98/" },
-  ],
-  skills: [
-    {
-      category: "Backend Development",
-      items: ["MySQL", "FastAPI", "PostgreSQL", "PHP", "Firebase", "MongoDB"],
+} as const
+
+const projectIds = ['phunparty', 'cvbuilder', 'pacbloke', 'employeeaccess'] as const
+type ProjectId = (typeof projectIds)[number]
+
+const asStringArray = (value: unknown): string[] =>
+  Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : []
+
+export const usePortfolioContent = () => {
+  const { t } = useTranslation()
+
+  const skills = skillIds.map((skillId: SkillId) => ({
+    id: skillId,
+    category: t(`portfolio.skills.${skillId}.category`),
+    items: asStringArray(
+      t(`portfolio.skills.${skillId}.items`, {
+        returnObjects: true,
+      }),
+    ),
+  }))
+
+  const projects = projectIds.map((projectId: ProjectId) => ({
+    ...projectConfig[projectId],
+    description: t(`portfolio.projects.${projectId}.description`),
+    tags: asStringArray(
+      t(`portfolio.projects.${projectId}.tags`, {
+        returnObjects: true,
+      }),
+    ),
+    title: t(`portfolio.projects.${projectId}.title`),
+  }))
+
+  return {
+    name: 'Connor Walsh',
+    role: t('portfolio.role'),
+    badge: t('portfolio.badge'),
+    brandStatement: t('portfolio.brandStatement'),
+    intro: t('portfolio.intro'),
+    summary: t('portfolio.summary'),
+    primaryCta: {
+      label: t('portfolio.primaryCta'),
+      href: '#projects',
     },
-    {
-      category: "Frontend Development",
-      items: ["React", "CSS", "HTML", "Vanilla JavaScript", "Java"],
+    secondaryCta: {
+      label: t('portfolio.secondaryCta'),
+      href: '#contact',
     },
-    {
-      category: "Mobile Development",
-      items: ["React Native", "Expo", "Kotlin", "Jetpack Compose"],
+    resume: {
+      label: t('navigation.resume'),
+      href: '#/cv',
     },
-    {
-      category: "AI Capabilities",
-      items: ["TensorFlow", "Scikit-learn", "PyTorch", "CNN and NN architectures"],
+    contact: {
+      email: 'connor_w_98@hotmail.com',
+      note: t('portfolio.contactNote'),
+      availability: t('portfolio.availability'),
     },
-    {
-      category: "Workflow",
-      items: [
-        "Agile delivery",
-        "Clear team communication",
-        "Stakeholder collaboration",
-        "Clean design and code structure",
-      ],
-    },
-  ],
-  projects: [
-    {
-      title: "PhunParty",
-      description:
-        "A multiplayer party quiz game where players use their mobile devices to participate, and a shared host screen runs the session in real time.",
-      image: "/projects/Screenshot 2026-04-06 030949.png",
-      mobileImage: "/projects/PhunParty_Mobile_App.jpg",
-      tags: ["Full Stack", "Social App", "Product Build"],
-      gradient: "from-cyan-500 to-blue-500",
-      liveHref: "https://phun.party",
-      sourceHref: "https://github.com/cWalsh-developer/PhunParty",
-    },
-    {
-      title: "CVBuilder",
-      description:
-        "A Java Swing desktop app for building structured CVs through a guided interface and exporting them as CSV files.",
-      image: "/projects/Edit_Referee.png",
-      tags: ["Productivity", "Full Stack", "UX"],
-      gradient: "from-purple-500 to-pink-500",
-      liveHref: "https://github.com/cWalsh-developer/CV_Builder",
-      sourceHref: "https://github.com/cWalsh-developer/CV_Builder",
-    },
-    {
-      title: "PacBloke / ModernPacMan",
-      description:
-        "A hard-mode Pac-Man remake with split powers, teleport abilities, inverse mode, and a modern browser-based presentation.",
-      image: "/projects/Screenshot 2026-04-06 021654.png",
-      tags: ["Game Project", "Frontend", "Creative Build"],
-      gradient: "from-blue-500 to-violet-500",
-      liveHref: "https://cwalsh-developer.github.io/ModernPacMan/",
-      sourceHref: "https://github.com/cWalsh-developer/ModernPacMan",
-    },
-    {
-      title: "EmployeeAccess Facial Detection System",
-      description:
-        "A full-stack employee access system that uses face recognition for secure entry, monitoring, and access control.",
-      image: "/projects/cv-recognition.png",
-      tags: ["Computer Vision", "Security", "Backend"],
-      gradient: "from-emerald-500 to-cyan-500",
-      liveHref: "https://github.com/CV-Recognition",
-      sourceHref: "https://github.com/CV-Recognition",
-    },
-  ],
-} as const;
+    socialLinks,
+    skills,
+    projects,
+  } as const
+}

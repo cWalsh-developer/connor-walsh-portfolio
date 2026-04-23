@@ -8,13 +8,19 @@
     "build": "vite build"
   },
   "dependencies": {
+    "i18next": "^26.0.6",
+    "i18next-browser-languagedetector": "^8.2.1",
     "lucide-react": "0.487.0",
     "motion": "12.23.24",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-i18next": "^17.0.4"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
     "typescript": "5.8.3",

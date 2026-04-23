@@ -1,16 +1,20 @@
 import { Menu, Rocket, X } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useState } from 'react'
-import { portfolio } from '../../content/portfolio'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioContent } from '../../content/portfolio'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const { t } = useTranslation()
+  const portfolio = usePortfolioContent()
 
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
+    { label: t('navigation.about'), href: '#about' },
+    { label: t('navigation.skills'), href: '#skills' },
+    { label: t('navigation.projects'), href: '#projects' },
+    { label: t('navigation.contact'), href: '#contact' },
   ]
 
   const scrollToSection = (href: string) => {
@@ -51,6 +55,8 @@ export function Navigation() {
                 <motion.div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent opacity-0 transition-opacity group-hover:opacity-100" />
               </motion.button>
             ))}
+
+            <LanguageSwitcher />
 
             <motion.a
               href={portfolio.resume.href}
@@ -95,6 +101,9 @@ export function Navigation() {
                 {item.label}
               </motion.button>
             ))}
+            <div className="px-4 pt-2 pb-1">
+              <LanguageSwitcher compact />
+            </div>
             <motion.a
               href={portfolio.resume.href}
               initial={{ x: -20, opacity: 0 }}

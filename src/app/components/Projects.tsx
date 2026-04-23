@@ -1,6 +1,7 @@
 import { ExternalLink, Github, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
-import { portfolio } from '../../content/portfolio'
+import { useTranslation } from 'react-i18next'
+import { usePortfolioContent } from '../../content/portfolio'
 import { ImageFallback } from './ImageFallback'
 
 function ProjectVisual({
@@ -57,6 +58,9 @@ function ProjectVisual({
 }
 
 export function Projects() {
+  const { t } = useTranslation()
+  const portfolio = usePortfolioContent()
+
   return (
     <section id="projects" className="relative overflow-hidden px-6 py-32">
       <div className="absolute inset-0">
@@ -73,16 +77,16 @@ export function Projects() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-2">
             <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm tracking-wider text-primary">FEATURED WORK</span>
+            <span className="text-sm tracking-wider text-primary">{t('projectsSection.badge')}</span>
           </div>
 
           <h2 className="mb-4 text-5xl">
             <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              Featured Projects
+              {t('projectsSection.title')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            A few project directions that show how I approach product, layout, and frontend craft.
+            {t('projectsSection.subtitle')}
           </p>
         </motion.div>
 
@@ -140,7 +144,7 @@ export function Projects() {
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center gap-2 text-primary transition-colors hover:text-accent"
                       >
-                        <span>Live Preview</span>
+                        <span>{t('projectsSection.livePreview')}</span>
                         <ExternalLink className="h-4 w-4" />
                       </motion.a>
 
@@ -151,7 +155,7 @@ export function Projects() {
                         className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
                       >
                         <Github className="h-4 w-4" />
-                        <span>Source Code</span>
+                        <span>{t('projectsSection.sourceCode')}</span>
                       </motion.a>
                     </div>
                   </div>
