@@ -2,29 +2,45 @@
 
 :root {
   --font-size: 16px;
-  --background: #0a0a0f;
-  --foreground: #e0e6ff;
-  --card: #13131a;
-  --card-foreground: #e0e6ff;
+  --font-body:
+    Inter,
+    'Segoe UI',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  --font-heading:
+    Inter,
+    'Segoe UI',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  --background: #080b12;
+  --foreground: #e7eeff;
+  --card: #0f1624;
+  --card-foreground: #e7eeff;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #00d9ff;
-  --primary-foreground: #0a0a0f;
-  --secondary: #7b2cbf;
-  --secondary-foreground: #e0e6ff;
-  --muted: #1f1f2e;
-  --muted-foreground: #8892b0;
-  --accent: #e946ff;
-  --accent-foreground: #0a0a0f;
+  --primary: #7ad2ff;
+  --primary-foreground: #081322;
+  --secondary: #273244;
+  --secondary-foreground: #e7eeff;
+  --muted: #151e2f;
+  --muted-foreground: #98a6c4;
+  --accent: #9aa8ff;
+  --accent-foreground: #0b1324;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: rgba(0, 217, 255, 0.2);
+  --border: rgba(122, 210, 255, 0.2);
   --input: transparent;
-  --input-background: #1f1f2e;
+  --input-background: #151e2f;
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #00d9ff;
+  --ring: #7ad2ff;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -41,26 +57,60 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+.visual-b {
+  --font-body:
+    'Segoe UI',
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  --font-heading:
+    Bahnschrift,
+    'Segoe UI',
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  --primary: #95cfff;
+  --accent: #8e9fff;
+  --ring: #95cfff;
+  --border: rgba(149, 207, 255, 0.24);
+}
+
+.hero-panel {
+  transform: none !important;
+  perspective: none;
+}
+
+.visual-b .hero-panel h1 {
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+
 .dark {
-  --background: #0a0a0f;
-  --foreground: #e0e6ff;
-  --card: #13131a;
-  --card-foreground: #e0e6ff;
+  --background: #080b12;
+  --foreground: #e7eeff;
+  --card: #0f1624;
+  --card-foreground: #e7eeff;
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #00d9ff;
-  --primary-foreground: #0a0a0f;
-  --secondary: #7b2cbf;
-  --secondary-foreground: #e0e6ff;
-  --muted: #1f1f2e;
-  --muted-foreground: #8892b0;
-  --accent: #e946ff;
-  --accent-foreground: #0a0a0f;
+  --primary: #7ad2ff;
+  --primary-foreground: #081322;
+  --secondary: #273244;
+  --secondary-foreground: #e7eeff;
+  --muted: #151e2f;
+  --muted-foreground: #98a6c4;
+  --accent: #9aa8ff;
+  --accent-foreground: #0b1324;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: rgba(0, 217, 255, 0.2);
+  --border: rgba(122, 210, 255, 0.2);
   --input: oklch(0.269 0 0);
-  --ring: #00d9ff;
+  --ring: #7ad2ff;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: oklch(0.488 0.243 264.376);
@@ -132,14 +182,14 @@
   body {
     @apply bg-background text-foreground;
     margin: 0;
-    font-family:
-      Inter,
-      ui-sans-serif,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      sans-serif;
+    min-height: 100dvh;
+    background-image:
+      radial-gradient(900px 520px at -5% 10%, rgba(154, 168, 255, 0.12), transparent 58%),
+      radial-gradient(900px 520px at 105% -5%, rgba(122, 210, 255, 0.12), transparent 60%),
+      linear-gradient(to bottom, rgba(15, 22, 36, 0.45), rgba(8, 11, 18, 0.96));
+    background-attachment: fixed;
+    font-family: var(--font-body);
+    font-style: normal;
   }
 
   h1 {
@@ -162,10 +212,22 @@
 
   h4,
   label,
-  button {
+  button,
+  select {
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  label,
+  button,
+  select {
+    font-family: var(--font-heading);
+    font-style: normal;
   }
 
   input,
@@ -173,5 +235,10 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+
+  select option {
+    background-color: var(--card);
+    color: var(--foreground);
   }
 }

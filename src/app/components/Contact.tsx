@@ -39,7 +39,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden px-6 py-32">
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[150px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -49,14 +49,8 @@ export function Contact() {
           viewport={{ once: true }}
           className="mb-20 text-center"
         >
-          <h2 className="mb-4 text-5xl">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              {t('contactSection.title')}
-            </span>
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            {t('contactSection.subtitle')}
-          </p>
+          <h2 className="mb-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">{t('contactSection.title')}</h2>
+          <p className="text-lg text-muted-foreground md:text-xl">{t('contactSection.subtitle')}</p>
         </motion.div>
 
         <div className="grid gap-12 md:grid-cols-2">
@@ -65,9 +59,9 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card/90 p-7 shadow-[0_20px_44px_rgba(0,0,0,0.24)]">
               <div>
-                <label htmlFor="name" className="mb-2 block text-foreground">
+                <label htmlFor="name" className="mb-2 block text-sm tracking-wide text-muted-foreground">
                   {t('contactSection.name')}
                 </label>
                 <input
@@ -76,13 +70,13 @@ export function Contact() {
                   required
                   value={formState.name}
                   onChange={(event) => setFormState({ ...formState, name: event.target.value })}
-                  className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                  className="w-full rounded-lg border border-border bg-muted/40 px-4 py-3 transition-all focus:border-primary/65 focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   placeholder={t('contactSection.namePlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="mb-2 block text-foreground">
+                <label htmlFor="email" className="mb-2 block text-sm tracking-wide text-muted-foreground">
                   {t('contactSection.email')}
                 </label>
                 <input
@@ -91,13 +85,13 @@ export function Contact() {
                   required
                   value={formState.email}
                   onChange={(event) => setFormState({ ...formState, email: event.target.value })}
-                  className="w-full rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                  className="w-full rounded-lg border border-border bg-muted/40 px-4 py-3 transition-all focus:border-primary/65 focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   placeholder={t('contactSection.emailPlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="mb-2 block text-foreground">
+                <label htmlFor="message" className="mb-2 block text-sm tracking-wide text-muted-foreground">
                   {t('contactSection.message')}
                 </label>
                 <textarea
@@ -106,16 +100,16 @@ export function Contact() {
                   value={formState.message}
                   onChange={(event) => setFormState({ ...formState, message: event.target.value })}
                   rows={6}
-                  className="w-full resize-none rounded-lg border border-border bg-card px-4 py-3 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                  className="w-full resize-none rounded-lg border border-border bg-muted/40 px-4 py-3 transition-all focus:border-primary/65 focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   placeholder={t('contactSection.messagePlaceholder')}
                 />
               </div>
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(0, 217, 255, 0.3)' }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-primary-foreground"
+                className="group flex w-full items-center justify-center gap-2 rounded-lg border border-primary/35 bg-primary/12 px-8 py-4 font-semibold text-primary transition-colors hover:bg-primary/20"
               >
                 <span>{t('contactSection.sendMessage')}</span>
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -129,7 +123,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="space-y-6 rounded-2xl border border-border bg-card p-8">
+            <div className="space-y-6 rounded-2xl border border-border bg-card/90 p-8 shadow-[0_20px_44px_rgba(0,0,0,0.24)]">
               <h3 className="text-2xl">{t('contactSection.getInTouch')}</h3>
 
               <p className="text-muted-foreground">{portfolio.intro}</p>
@@ -150,9 +144,9 @@ export function Contact() {
                     <motion.a
                       key={link.label}
                       href={link.href}
-                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileHover={{ scale: 1.06, y: -1 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-muted transition-colors hover:bg-primary/10 hover:text-primary"
+                      className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-muted/50 text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/12 hover:text-primary"
                       aria-label={link.label}
                     >
                       <link.icon className="h-5 w-5" />
@@ -163,11 +157,11 @@ export function Contact() {
             </div>
 
             <motion.div
-              className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 to-accent/10 p-8"
+              className="rounded-2xl border border-primary/25 bg-primary/8 p-8"
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start gap-4">
-                <div className="mt-1.5 h-3 w-3 animate-pulse rounded-full bg-green-500" />
+                <div className="mt-1.5 h-2.5 w-2.5 rounded-full bg-primary" />
                 <div>
                   <h4 className="mb-2">{t('contactSection.availableForProjects')}</h4>
                   <p className="text-sm text-muted-foreground">{portfolio.contact.availability}</p>

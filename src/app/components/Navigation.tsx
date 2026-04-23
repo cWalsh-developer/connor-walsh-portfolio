@@ -1,27 +1,41 @@
-import { Menu, Rocket, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { usePortfolioContent } from '../../content/portfolio'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
+type NavItem = {
+  href: string
+  label: string
+  mode: 'route' | 'section'
+}
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const { t } = useTranslation()
   const portfolio = usePortfolioContent()
 
-  const navItems = [
-    { label: t('navigation.about'), href: '#about' },
-    { label: t('navigation.skills'), href: '#skills' },
-    { label: t('navigation.projects'), href: '#projects' },
-    { label: t('navigation.contact'), href: '#contact' },
+  const navItems: NavItem[] = [
+    { label: t('navigation.about'), href: '#/about', mode: 'route' },
+    { label: t('navigation.magic', { defaultValue: 'Magic' }), href: '#/magic', mode: 'route' },
+    { label: t('navigation.skills'), href: '#skills', mode: 'section' },
+    { label: t('navigation.projects'), href: '#projects', mode: 'section' },
+    { label: t('navigation.contact'), href: '#contact', mode: 'section' },
   ]
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+  const handleNavClick = (item: NavItem) => {
+    if (item.mode === 'route') {
+      window.location.hash = item.href
+      setIsOpen(false)
+      return
+    }
+
+    const element = document.querySelector(item.href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+
     setIsOpen(false)
   }
 
@@ -29,15 +43,17 @@ export function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-border/80 bg-background/78 backdrop-blur-2xl"
     >
-      <div className="mx-auto max-w-7xl px-6 py-4">
+      <div className="mx-auto max-w-7xl px-6 py-3">
         <div className="flex items-center justify-between">
-          <motion.div className="flex items-center gap-2" whileHover={{ scale: 1.05 }}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-              <Rocket className="h-6 w-6 text-white" />
+          <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.01 }}>
+            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-primary/35 bg-gradient-to-br from-primary/28 to-primary/6 p-1">
+              <span className="inline-block whitespace-nowrap text-[1rem] leading-none font-bold tracking-[-0.03em] text-white">
+                {'{C W}'}
+              </span>
             </div>
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-xl text-transparent">
+            <span className="text-lg font-semibold tracking-wide text-foreground">
               {portfolio.name}
             </span>
           </motion.div>
@@ -46,13 +62,13 @@ export function Navigation() {
             {navItems.map((item) => (
               <motion.button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                whileHover={{ scale: 1.05, y: -2 }}
+                onClick={() => handleNavClick(item)}
+                whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative text-muted-foreground transition-colors hover:text-foreground"
+                className="group relative rounded-md px-1 py-1 text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
               >
                 {item.label}
-                <motion.div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent opacity-0 transition-opacity group-hover:opacity-100" />
+                <motion.div className="absolute -bottom-0.5 left-1 right-1 h-px bg-primary/75 opacity-0 transition-opacity group-hover:opacity-100" />
               </motion.button>
             ))}
 
@@ -60,9 +76,9 @@ export function Navigation() {
 
             <motion.a
               href={portfolio.resume.href}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0, 217, 255, 0.3)' }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-2 font-semibold text-black no-underline"
+              className="inline-flex items-center justify-center rounded-lg border border-primary/35 bg-primary/12 px-5 py-2 text-sm font-semibold text-primary no-underline transition-colors hover:bg-primary/18"
             >
               {portfolio.resume.label}
             </motion.a>
@@ -85,7 +101,7 @@ export function Navigation() {
           }}
           className="overflow-hidden md:hidden"
         >
-          <div className="space-y-2 pt-4 pb-2">
+          <div className="mt-3 space-y-2 rounded-xl border border-border bg-card/90 p-3 pt-3 pb-2">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.label}
@@ -95,7 +111,7 @@ export function Navigation() {
                   opacity: isOpen ? 1 : 0,
                 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavClick(item)}
                 className="block w-full rounded-lg px-4 py-2 text-left text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 {item.label}
@@ -112,7 +128,7 @@ export function Navigation() {
                 opacity: isOpen ? 1 : 0,
               }}
               transition={{ delay: navItems.length * 0.1 }}
-              className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2 font-semibold text-black no-underline"
+              className="mt-2 inline-flex w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/12 px-4 py-2 text-sm font-semibold text-primary no-underline"
             >
               {portfolio.resume.label}
             </motion.a>

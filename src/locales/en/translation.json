@@ -7,23 +7,24 @@
   },
   "navigation": {
     "about": "About",
+    "magic": "Magic",
     "auto": "Auto",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact",
-    "resume": "My CV",
+    "resume": "CV",
     "language": "Language"
   },
   "portfolio": {
     "role": "Full Stack Developer",
     "badge": "Backend systems / Mobile apps / Product builds",
     "brandStatement": "Full-stack developer focused on backend systems and mobile-first product builds.",
-    "intro": "I am currently a Software Engineer at BAE Systems, and outside of work I am especially drawn to backend and mobile-focused builds.",
-    "summary": "I build clean, maintainable products that are practical to ship and enjoyable to use.",
+    "intro": "Connor is currently a Software Engineer at BAE Systems, and outside of work he is especially drawn to backend and mobile-focused builds.",
+    "summary": "He builds clean, maintainable products that are practical to ship and enjoyable to use.",
     "primaryCta": "View Projects",
     "secondaryCta": "Get In Touch",
-    "contactNote": "The links below go directly to my real profiles and email.",
-    "availability": "Currently working full-time at BAE Systems and always happy to connect with other developers, teams, and interesting projects.",
+    "contactNote": "The links below go directly to Connor's real profiles and email.",
+    "availability": "Connor currently works full-time at BAE Systems and is always happy to connect with other developers, teams, and interesting projects.",
     "skills": {
       "backend": {
         "category": "Backend Development",
@@ -76,12 +77,12 @@
   },
   "skillsSection": {
     "title": "Core Strengths",
-    "subtitle": "The areas I focus on when turning concepts into polished products."
+    "subtitle": "The areas Connor focuses on when turning concepts into polished products."
   },
   "projectsSection": {
     "badge": "FEATURED WORK",
     "title": "Featured Projects",
-    "subtitle": "A few project directions that show how I approach product, layout, and frontend craft.",
+    "subtitle": "A few project directions that show how Connor approaches product, layout, and frontend craft.",
     "livePreview": "Live Preview",
     "sourceCode": "Source Code"
   },
@@ -93,10 +94,10 @@
     "message": "Message",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "you@example.com",
-    "messagePlaceholder": "Tell me a bit about the project, timeline, or role.",
+    "messagePlaceholder": "Share a bit about the project, timeline, or role.",
     "sendMessage": "Send Message",
     "getInTouch": "Get in Touch",
-    "findMeOnline": "Find me online",
+    "findMeOnline": "Find Connor online",
     "availableForProjects": "Available for Projects",
     "emailSubject": "Portfolio enquiry from {{name}}",
     "websiteVisitor": "Website visitor"
@@ -115,10 +116,71 @@
     "hobbiesInterests": "Hobbies & Interests",
     "education": "Education"
   },
+  "aboutPage": {
+    "badge": "About Connor",
+    "title": "Developer, product builder, and AI postgraduate",
+    "description": "Connor has over {{yearsOfExperience}} years of development experience building production software across full stack, backend-first systems, mobile apps, and AI-led projects. He holds a first-class undergraduate degree from Kingston University and is currently studying for an MSc in Artificial Intelligence.",
+    "experienceTitle": "Experience Snapshot",
+    "cards": {
+      "yearsTitle": "{{yearsOfExperience}}+ years",
+      "yearsDescription": "Professional and project-based development experience across multiple product types.",
+      "educationTitle": "First-class BSc + MSc AI",
+      "educationDescription": "Strong academic grounding from Kingston University, with advanced postgraduate AI study in progress.",
+      "aiTitle": "Practical AI and software engineering",
+      "aiDescription": "Experience applying machine learning and vision systems to solve concrete, real-world problems."
+    },
+    "projectsTitle": "Selected Project Work",
+    "safeMapTitle": "Safe Map",
+    "safeMapDescription": "Safe Map is a safety-first routing application inspired by Connor's real-world experiences as someone living with cerebral palsy. The purpose of the app is to support people with disabilities and anyone who feels vulnerable walking alone. It helps people navigate through well-lit streets by using streetlight markers directly on the map so users can quickly identify better-lit paths, and includes a custom smart-routing algorithm that automatically adjusts recommended walking routes toward the most illuminated streets. It also uses tactile vibration cues to indicate left and right turns from inside a user's pocket, reducing the need to expose a phone while walking.",
+    "greenWasteTitle": "Green Waste Vision System",
+    "greenWasteDescription": "A computer-vision project focused on identifying the most eco-friendly disposal pathway for bulky waste items, including recycling, repurposing, or incineration recommendations. The system uses modern CNN approaches, NVIDIA Jetson Orin Nano hardware, and Intel RealSense depth cameras in a remote van-based setup so decisions can be made before collection.",
+    "contributionsTitle": "Professional Contributions",
+    "contributions": {
+      "one": "Delivered technical work in healthcare contexts, including projects with the NHS.",
+      "two": "Worked as an Academic Support Mentor at Kingston University for three years, helping students build confidence in software and technical concepts.",
+      "three": "Comfortable across the full delivery lifecycle, from technical architecture and implementation to communication with users and stakeholders."
+    },
+    "beyondLabel": "Beyond software",
+    "beyondDescription": "He also performs professionally as a magician and mentalist. To keep this portfolio clear, that story has been split onto a dedicated page.",
+    "magicCta": "Explore Magic Profile",
+    "cvCta": "View CV Page"
+  },
+  "magicPage": {
+    "badge": "Magic and Mentalism",
+    "title": "Performance work beyond tech",
+    "description": "Connor has been performing for almost two decades, with a psychology and mentalism background spanning over {{yearsInPsychology}} years. His work combines close-up magic, psychological theatre, and audience connection for live events, charity audiences, and private bookings.",
+    "glanceTitle": "At A Glance",
+    "cards": {
+      "yearsTitle": "{{yearsPerforming}}+ years performing",
+      "yearsDescription": "Nearly two decades of live performance experience across stage and close-up formats.",
+      "internationalTitle": "International events",
+      "internationalDescription": "Performances delivered in Scotland, Wales, and the USA alongside events throughout the UK.",
+      "audiencesTitle": "Charity and private audiences",
+      "audiencesDescription": "Performances for community and charity events including NCS, plus private and industry audiences."
+    },
+    "psychologyTitle": "Psychology In Practice",
+    "psychology": {
+      "one": "He has designed performance moments that use psychological techniques to gently steer people toward choosing what he wants them to, while still making it feel fair, natural, and fully like it was their own choice.",
+      "two": "He has invented his own system that uses small behaviour clues, including emoji habits and the way people use them in messages, to make thoughtful observations about someone's character, personality and life in a performance setting.",
+      "three": "He has created conversational game-based routines, including noughts and crosses (Tic-Tac-Toe), that help people feel comfortable, understood, and genuinely connected in a way that they might not have felt ever before.",
+      "four": "He has successfully convinced people that he possesses supernatural abilities, including mind reading and telepathy, through the use of psychological techniques and performance skills. This has led to memorable moments of wonder and amazement for his audiences."
+    },
+    "notableTitle": "Notable Performances",
+    "notableDescription": "He has performed for cast members of The Boys including Karl Urban, Laz Alonso, Jessie T Usher, Karen Fukuhara, and Shantel VanSanten, as well as Sebastian Stan, Freya Allan, Taylor Lautner, Daniel Panabaker, Jensen Ackles, and other public figures.",
+    "creativeTitle": "Creative and Advisory Work",
+    "consultingTitle": "Original material and consulting",
+    "consultingDescription": "Alongside performing, he creates original magic effects and works as a consultant and advisor to other magicians for live shows, social media content, and television appearances.",
+    "writingTitle": "Psychology and mentalism writing",
+    "writingDescription": "His performance approach is rooted in psychology and mentalism, and he has contributed to and written books that teach methods behind psychological influence, audience reading, and deep connection work.",
+    "developerLabel": "Developer profile",
+    "developerDescription": "Looking for more detail on Connor's software engineering career and academic background? The dedicated About page gives an overview, and the CV page provides the full detail.",
+    "developerCta": "View Developer About Page",
+    "cvCta": "View CV Page"
+  },
   "cv": {
     "title": "Software Engineer",
     "summary": "Computer Science graduate with hands-on experience in Python, Java, SQL, and Kotlin, with a strong interest in backend and mobile systems that connect to real-world APIs.",
-    "profile": "AWS Certified Cloud Practitioner with practical experience using Git-based workflows and collaborating in small teams. I care about writing clean code, solving problems thoughtfully, and learning quickly.",
+    "profile": "AWS Certified Cloud Practitioner with practical experience using Git-based workflows and collaborating in small teams. Connor cares about writing clean code, solving problems thoughtfully, and learning quickly.",
     "education": {
       "msc_ai": {
         "qualification": "Master of Science in Artificial Intelligence",
@@ -211,6 +273,6 @@
       "Good team working",
       "Versatile"
     ],
-    "interests": "I enjoy performing as a magician for the public at events such as NCS charities, creating new magic, and collaborating with other magicians to build their shows. I also enjoy learning new things, helping others, science fiction, action and comedy films, and reading educational books."
+    "interests": "Connor enjoys performing as a magician for the public at events such as NCS charities, creating new magic, and collaborating with other magicians to build their shows. He also enjoys learning new things, helping others, science fiction, action and comedy films, and reading educational books."
   }
 }

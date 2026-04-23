@@ -37,14 +37,14 @@ export function LanguageSwitcher({ compact = false }: LanguageSwitcherProps) {
 
   return (
     <div className={`relative inline-flex items-center ${compact ? 'w-full' : ''}`}>
-      <Globe className="pointer-events-none absolute left-3 h-4 w-4 text-primary" />
+      <Globe className="pointer-events-none absolute left-3 h-4 w-4 text-muted-foreground" />
       <select
         value={selectValue}
         onChange={(event: ChangeEvent<HTMLSelectElement>) => {
           void handleLanguageChange(event.target.value)
         }}
         aria-label={t('navigation.language')}
-        className={`w-full appearance-none rounded-lg border border-border bg-card/80 py-2 pr-3 pl-9 text-sm text-foreground transition-colors focus:border-primary focus:outline-none ${
+        className={`w-full appearance-none rounded-lg border border-border bg-card/85 py-2 pr-3 pl-9 text-sm text-foreground transition-colors hover:border-primary/40 hover:bg-muted/55 focus:border-primary/55 focus:outline-none ${
           compact ? '' : 'min-w-[168px]'
         }`}
       >

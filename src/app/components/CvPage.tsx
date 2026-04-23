@@ -20,8 +20,8 @@ export function CvPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/10 blur-[110px]" />
-        <div className="absolute right-0 bottom-20 h-80 w-80 rounded-full bg-accent/10 blur-[130px]" />
+        <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary/12 blur-[110px]" />
+        <div className="absolute right-0 bottom-20 h-80 w-80 rounded-full bg-primary/8 blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-10 md:px-8">
@@ -39,9 +39,9 @@ export function CvPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05 }}
-          className="overflow-hidden rounded-[2rem] border border-border bg-card/80 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur"
+          className="overflow-hidden rounded-[2rem] border border-border bg-card/85 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur"
         >
-          <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-accent/8 px-8 py-10 md:px-12">
+          <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-transparent px-8 py-10 md:px-12">
             <div className="grid gap-8 md:grid-cols-[1.3fr_0.9fr]">
               <div>
                 <p className="mb-3 text-sm font-semibold tracking-[0.35em] text-primary uppercase">{t('cvPage.curriculumVitae')}</p>
@@ -108,7 +108,7 @@ export function CvPage() {
                   <ul className="space-y-3">
                     {cv.transferableSkills.map((skill) => (
                       <li key={skill} className="flex items-start gap-3 text-foreground/90">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
                         <span>{skill}</span>
                       </li>
                     ))}

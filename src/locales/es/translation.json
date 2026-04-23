@@ -6,24 +6,25 @@
     "de": "Aleman"
   },
   "navigation": {
-    "about": "Sobre mi",
+    "about": "Sobre Connor",
+    "magic": "Magia",
     "auto": "Automatico",
     "skills": "Habilidades",
     "projects": "Proyectos",
     "contact": "Contacto",
-    "resume": "Mi CV",
+    "resume": "CV",
     "language": "Idioma"
   },
   "portfolio": {
     "role": "Desarrollador Full Stack",
     "badge": "Sistemas backend / Apps moviles / Productos digitales",
     "brandStatement": "Desarrollador full stack enfocado en sistemas backend y productos mobile-first.",
-    "intro": "Actualmente soy Software Engineer en BAE Systems, y fuera del trabajo me atraen especialmente los proyectos backend y mobile.",
-    "summary": "Construyo productos limpios y mantenibles, practicos de lanzar y agradables de usar.",
+    "intro": "Connor es actualmente Software Engineer en BAE Systems, y fuera del trabajo le atraen especialmente los proyectos backend y mobile.",
+    "summary": "Connor construye productos limpios y mantenibles, practicos de lanzar y agradables de usar.",
     "primaryCta": "Ver Proyectos",
     "secondaryCta": "Contactar",
-    "contactNote": "Los enlaces de abajo van directo a mis perfiles reales y email.",
-    "availability": "Actualmente trabajo a tiempo completo en BAE Systems y siempre me alegra conectar con otros desarrolladores, equipos y proyectos interesantes.",
+    "contactNote": "Los enlaces de abajo van directo a los perfiles reales y el email de Connor.",
+    "availability": "Connor trabaja actualmente a tiempo completo en BAE Systems y siempre se alegra de conectar con otros desarrolladores, equipos y proyectos interesantes.",
     "skills": {
       "backend": {
         "category": "Desarrollo Backend",
@@ -76,12 +77,12 @@
   },
   "skillsSection": {
     "title": "Fortalezas Clave",
-    "subtitle": "Las areas en las que me enfoco para convertir conceptos en productos pulidos."
+    "subtitle": "Las areas en las que Connor se enfoca para convertir conceptos en productos pulidos."
   },
   "projectsSection": {
     "badge": "TRABAJOS DESTACADOS",
     "title": "Proyectos Destacados",
-    "subtitle": "Algunas direcciones de proyecto que muestran como abordo producto, layout y calidad frontend.",
+    "subtitle": "Algunas direcciones de proyecto que muestran como Connor aborda producto, layout y calidad frontend.",
     "livePreview": "Vista en Vivo",
     "sourceCode": "Codigo Fuente"
   },
@@ -93,10 +94,10 @@
     "message": "Mensaje",
     "namePlaceholder": "Tu nombre",
     "emailPlaceholder": "tu@ejemplo.com",
-    "messagePlaceholder": "Cuentame un poco sobre el proyecto, plazo o rol.",
+    "messagePlaceholder": "Comparte un poco sobre el proyecto, plazo o rol.",
     "sendMessage": "Enviar Mensaje",
     "getInTouch": "Ponte en Contacto",
-    "findMeOnline": "Encuentrame en linea",
+    "findMeOnline": "Encuentra a Connor en linea",
     "availableForProjects": "Disponible para Proyectos",
     "emailSubject": "Consulta de portfolio de {{name}}",
     "websiteVisitor": "Visitante del sitio"
@@ -115,10 +116,71 @@
     "hobbiesInterests": "Aficiones e Intereses",
     "education": "Educacion"
   },
+  "aboutPage": {
+    "badge": "Sobre Connor",
+    "title": "Desarrollador, creador de producto y estudiante de IA",
+    "description": "Connor tiene mas de {{yearsOfExperience}} anos de experiencia en desarrollo creando software de produccion en full stack, sistemas backend, apps moviles y proyectos con IA. Tiene un grado universitario first-class en Kingston University y actualmente estudia un MSc en Artificial Intelligence.",
+    "experienceTitle": "Resumen de Experiencia",
+    "cards": {
+      "yearsTitle": "{{yearsOfExperience}}+ anos",
+      "yearsDescription": "Experiencia profesional y de proyectos en varios tipos de producto.",
+      "educationTitle": "BSc First-class + MSc IA",
+      "educationDescription": "Base academica solida en Kingston University, con estudios de posgrado en IA en curso.",
+      "aiTitle": "IA practica e ingenieria de software",
+      "aiDescription": "Experiencia aplicando machine learning y vision por computador para resolver problemas reales."
+    },
+    "projectsTitle": "Proyectos Destacados",
+    "safeMapTitle": "Safe Map",
+    "safeMapDescription": "Safe Map es una aplicacion de rutas centrada en la seguridad, inspirada en experiencias reales de Connor como persona con paralisis cerebral. El objetivo principal de la app es ayudar a personas con discapacidades y a quienes se sienten vulnerables al caminar solos. Ayuda a navegar por calles mejor iluminadas mostrando marcadores de farolas directamente en el mapa para identificar rutas mas seguras, e incluye un algoritmo inteligente de rutas que ajusta automaticamente el recorrido recomendado hacia los caminos con mas luz. Tambien usa vibraciones tactiles para indicar giros a izquierda y derecha desde el bolsillo, reduciendo la necesidad de sacar el telefono.",
+    "greenWasteTitle": "Sistema de Vision para Residuos Verdes",
+    "greenWasteDescription": "Un proyecto de vision por computador enfocado en decidir la forma mas ecologica de tratar residuos voluminosos, incluyendo reciclaje, reutilizacion o incineracion. El sistema usa enfoques modernos de CNN, hardware NVIDIA Jetson Orin Nano y camaras de profundidad Intel RealSense en una configuracion remota dentro de una furgoneta para tomar decisiones antes de la recogida.",
+    "contributionsTitle": "Contribuciones Profesionales",
+    "contributions": {
+      "one": "Ha realizado trabajo tecnico en entornos de salud, incluyendo proyectos con el NHS.",
+      "two": "Trabajó como Academic Support Mentor en Kingston University durante tres anos, ayudando a estudiantes a ganar confianza en software y conceptos tecnicos.",
+      "three": "Comodo en todo el ciclo de entrega, desde arquitectura e implementacion tecnica hasta comunicacion con usuarios y stakeholders."
+    },
+    "beyondLabel": "Mas alla del software",
+    "beyondDescription": "Tambien trabaja profesionalmente como mago y mentalista. Para mantener este portfolio claro, esa historia se ha separado en una pagina dedicada.",
+    "magicCta": "Ver Perfil de Magia",
+    "cvCta": "Ver Pagina CV"
+  },
+  "magicPage": {
+    "badge": "Magia y Mentalismo",
+    "title": "Trabajo de actuacion mas alla de la tecnologia",
+    "description": "Connor lleva actuando casi dos decadas, con una base en psicologia y mentalismo de mas de {{yearsInPsychology}} anos. Su trabajo combina magia de cerca, teatro psicologico y conexion con la audiencia en eventos en vivo, eventos beneficos y actuaciones privadas.",
+    "glanceTitle": "Resumen Rapido",
+    "cards": {
+      "yearsTitle": "{{yearsPerforming}}+ anos actuando",
+      "yearsDescription": "Casi dos decadas de experiencia en actuaciones en vivo en formato de escenario y close-up.",
+      "internationalTitle": "Eventos internacionales",
+      "internationalDescription": "Actuaciones en Escocia, Gales y Estados Unidos, ademas de eventos por todo Reino Unido.",
+      "audiencesTitle": "Publico benefico y privado",
+      "audiencesDescription": "Actuaciones para eventos comunitarios y beneficos como NCS, ademas de publico privado y del sector."
+    },
+    "psychologyTitle": "Psicologia en la Practica",
+    "psychology": {
+      "one": "Connor ha disenado momentos de actuacion que usan tecnicas psicologicas para guiar suavemente a las personas hacia la opcion que el quiere, mientras sigue sintiendose justo, natural y completamente como una decision propia.",
+      "two": "Connor ha inventado su propio sistema, que usa pequenas pistas de comportamiento, incluidos habitos con emojis y la forma en que se usan en mensajes, para hacer observaciones sobre el caracter, la personalidad y la vida de una persona en contexto de actuacion.",
+      "three": "Connor ha creado rutinas conversacionales y basadas en juegos, incluyendo noughts and crosses (Tic-Tac-Toe), que ayudan a que las personas se sientan comodas, comprendidas y genuinamente conectadas de una forma que quiza no habian sentido nunca antes.",
+      "four": "Connor ha convencido con exito a personas de que posee habilidades sobrenaturales, incluyendo lectura mental y telepatia, mediante tecnicas psicologicas y habilidades de actuacion. Esto ha generado momentos memorables de asombro y maravilla para sus audiencias."
+    },
+    "notableTitle": "Actuaciones Destacadas",
+    "notableDescription": "Connor ha actuado para miembros del reparto de The Boys incluyendo Karl Urban, Laz Alonso, Jessie T Usher, Karen Fukuhara y Shantel VanSanten, asi como Sebastian Stan, Freya Allan, Taylor Lautner, Daniel Panabaker, Jensen Ackles y otras figuras publicas.",
+    "creativeTitle": "Trabajo Creativo y de Asesoria",
+    "consultingTitle": "Material original y consultoria",
+    "consultingDescription": "Ademas de actuar, Connor crea efectos de magia originales y trabaja como consultor y asesor para otros magos en shows en vivo, contenido de redes sociales y apariciones en television.",
+    "writingTitle": "Escritura sobre psicologia y mentalismo",
+    "writingDescription": "Su enfoque esta basado en psicologia y mentalismo, y ha contribuido y escrito libros que ensenan metodos de influencia psicologica, lectura de audiencia y creacion de conexion profunda.",
+    "developerLabel": "Perfil de desarrollador",
+    "developerDescription": "Si buscas mas detalle sobre la carrera de ingenieria de software y la base academica de Connor, la pagina About ofrece un resumen y la pagina CV ofrece el detalle completo.",
+    "developerCta": "Ver Pagina About de Desarrollador",
+    "cvCta": "Ver Pagina CV"
+  },
   "cv": {
     "title": "Ingeniero de Software",
     "summary": "Graduado en Computer Science con experiencia practica en Python, Java, SQL y Kotlin, con fuerte interes en sistemas backend y moviles conectados a APIs reales.",
-    "profile": "AWS Certified Cloud Practitioner con experiencia practica en flujos de trabajo con Git y colaboracion en equipos pequenos. Me importa escribir codigo limpio, resolver problemas con criterio y aprender rapido.",
+    "profile": "AWS Certified Cloud Practitioner con experiencia practica en flujos de trabajo con Git y colaboracion en equipos pequenos. A Connor le importa escribir codigo limpio, resolver problemas con criterio y aprender rapido.",
     "education": {
       "msc_ai": {
         "qualification": "Master of Science in Artificial Intelligence",
@@ -168,7 +230,7 @@
         "role": "Ingeniero de Software",
         "organisation": "BAE Systems",
         "period": "Actual",
-        "summary": "Actualmente trabajo como Software Engineer en un entorno de ingenieria profesional."
+        "summary": "Actualmente trabaja como Software Engineer en un entorno de ingenieria profesional."
       },
       "peer_mentor": {
         "role": "Mentor Academico",
@@ -211,6 +273,6 @@
       "Buen trabajo en equipo",
       "Versatil"
     ],
-    "interests": "Disfruto actuar como mago en eventos publicos como charities de NCS, crear nueva magia y colaborar con otros magos para construir sus shows. Tambien disfruto aprender cosas nuevas, ayudar a otros, ciencia ficcion, peliculas de accion y comedia, y leer libros educativos."
+    "interests": "Connor disfruta actuar como mago en eventos publicos como charities de NCS, crear nueva magia y colaborar con otros magos para construir sus shows. Tambien disfruta aprender cosas nuevas, ayudar a otros, ciencia ficcion, peliculas de accion y comedia, y leer libros educativos."
   }
 }

@@ -1,4 +1,4 @@
-import { Rocket, Sparkles, Terminal } from 'lucide-react'
+import { ChevronDown, Terminal } from 'lucide-react'
 import { motion } from 'motion/react'
 import { usePortfolioContent } from '../../content/portfolio'
 
@@ -6,140 +6,73 @@ export function Hero() {
   const portfolio = usePortfolioContent()
 
   return (
-    <section
-      id="about"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00d9ff08_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff08_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+    <section id="about" className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 pb-20">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-35" />
 
       <motion.div
-        className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-[128px]"
+        className="absolute top-12 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-primary/16 blur-[140px]"
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.06, 1],
+          opacity: [0.35, 0.5, 0.35],
         }}
         transition={{
-          duration: 8,
+          duration: 10,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
       />
       <motion.div
-        className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-accent/20 blur-[128px]"
+        className="absolute right-1/4 bottom-[-6rem] h-[24rem] w-[24rem] rounded-full bg-accent/12 blur-[120px]"
         animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.3, 0.5],
+          scale: [1, 1.12, 1],
+          opacity: [0.16, 0.26, 0.16],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
-        <motion.div
-          className="absolute top-0 -left-20"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        >
-          <Rocket className="h-16 w-16 text-primary/30" />
-        </motion.div>
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
+        <div className="hero-panel transform-none">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card/75 px-4 py-2 shadow-[0_10px_34px_rgba(0,0,0,0.25)]">
+            <Terminal className="h-4 w-4 text-primary" />
+            <span className="text-xs tracking-[0.16em] text-primary/95 uppercase md:text-sm">{portfolio.badge}</span>
+          </div>
 
-        <motion.div
-          className="absolute right-[-5rem] bottom-0"
-          animate={{
-            y: [0, 20, 0],
-            rotate: [0, -10, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        >
-          <Sparkles className="h-16 w-16 text-accent/30" />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
-        >
-          <motion.div className="inline-block" whileHover={{ scale: 1.02 }}>
-            <div className="mb-4 flex items-center justify-center gap-3">
-              <Terminal className="h-8 w-8 text-primary" />
-              <span className="rounded-full border border-primary/30 bg-primary/5 px-4 py-1 text-sm tracking-wider text-primary">
-                {portfolio.badge}
-              </span>
-            </div>
-          </motion.div>
-
-          <h1 className="text-6xl tracking-tight md:text-8xl">
-            <span className="animate-pulse bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              {portfolio.role}
-            </span>
+          <h1 className="mt-7 text-5xl font-semibold not-italic text-foreground md:text-7xl">
+            {portfolio.role}
           </h1>
 
-          <p className="mx-auto max-w-3xl text-xl text-muted-foreground md:text-2xl">
-            {portfolio.brandStatement}
-            <br />
-            {portfolio.summary}
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 not-italic text-muted-foreground md:text-xl">
+            {portfolio.brandStatement} {portfolio.summary}
           </p>
 
-          <motion.div
-            className="flex justify-center gap-4 pt-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 217, 255, 0.5)' }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative overflow-hidden rounded-lg bg-primary px-8 py-4 text-primary-foreground"
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <button
+              className="rounded-lg border border-primary/35 bg-primary/12 px-7 py-3 text-sm font-semibold not-italic text-primary transition-colors hover:bg-primary/20 md:px-8 md:py-3.5 md:text-base"
               onClick={() => document.querySelector(portfolio.primaryCta.href)?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="relative z-10">{portfolio.primaryCta.label}</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary to-accent"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
+              {portfolio.primaryCta.label}
+            </button>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-lg border border-primary/30 px-8 py-4 text-foreground transition-colors hover:bg-primary/5"
+            <button
+              className="rounded-lg border border-border bg-card/65 px-7 py-3 text-sm font-semibold not-italic text-foreground transition-colors hover:bg-card md:px-8 md:py-3.5 md:text-base"
               onClick={() => document.querySelector(portfolio.secondaryCta.href)?.scrollIntoView({ behavior: 'smooth' })}
             >
               {portfolio.secondaryCta.label}
-            </motion.button>
-          </motion.div>
-        </motion.div>
+            </button>
+          </div>
+        </div>
       </div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 text-primary/85"
+        animate={{ y: [0, 7, 0] }}
+        transition={{ duration: 2.2, repeat: Infinity }}
       >
-        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-primary/30 pt-2">
-          <motion.div
-            className="h-1.5 w-1.5 rounded-full bg-primary"
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
+        <ChevronDown className="h-5 w-5" />
       </motion.div>
     </section>
   )

@@ -4,7 +4,9 @@ import { Contact } from './components/Contact'
 import { CvPage } from './components/CvPage'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
+import { MagicPage } from './components/MagicPage'
 import { Navigation } from './components/Navigation'
+import { AboutPage } from './components/AboutPage'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { applyAutomaticLocale } from '../i18n'
@@ -12,6 +14,8 @@ import { applyAutomaticLocale } from '../i18n'
 export default function App() {
   const [route, setRoute] = useState(window.location.hash)
   const { i18n } = useTranslation()
+  const visualParam = new URLSearchParams(window.location.search).get('visual')
+  const visualPreset = visualParam === 'a' ? 'visual-a' : 'visual-b'
 
   useEffect(() => {
     const handleHashChange = () => setRoute(window.location.hash)
@@ -19,6 +23,13 @@ export default function App() {
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
+
+  useEffect(() => {
+    const pageRoutes = new Set(['#/about', '#/magic', '#/cv', '#', ''])
+    if (pageRoutes.has(route)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    }
+  }, [route])
 
   useEffect(() => {
     document.documentElement.lang = i18n.resolvedLanguage ?? 'en'
@@ -29,11 +40,19 @@ export default function App() {
   }, [])
 
   if (route === '#/cv') {
-    return <CvPage />
+    return <div className={visualPreset}><CvPage /></div>
+  }
+
+  if (route === '#/about') {
+    return <div className={visualPreset}><AboutPage /></div>
+  }
+
+  if (route === '#/magic') {
+    return <div className={visualPreset}><MagicPage /></div>
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className={`${visualPreset} min-h-screen bg-background text-foreground`}>
       <Navigation />
 
       <main>
@@ -51,10 +70,8 @@ export default function App() {
       <Footer />
 
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 h-32 w-32 border-t-2 border-l-2 border-primary/20" />
-        <div className="absolute top-0 right-0 h-32 w-32 border-t-2 border-r-2 border-primary/20" />
-        <div className="absolute bottom-0 left-0 h-32 w-32 border-b-2 border-l-2 border-primary/20" />
-        <div className="absolute right-0 bottom-0 h-32 w-32 border-r-2 border-b-2 border-primary/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(122,210,255,0.12),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-20" />
       </div>
     </div>
   )
