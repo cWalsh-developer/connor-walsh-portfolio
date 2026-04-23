@@ -37,7 +37,7 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="relative overflow-hidden px-6 py-32">
+    <section id="contact" className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 md:py-32">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[150px]" />
       </div>
@@ -47,10 +47,10 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-14 text-center sm:mb-16 md:mb-20"
         >
-          <h2 className="mb-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">{t('contactSection.title')}</h2>
-          <p className="text-lg text-muted-foreground md:text-xl">{t('contactSection.subtitle')}</p>
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">{t('contactSection.title')}</h2>
+          <p className="mx-auto max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg md:text-xl">{t('contactSection.subtitle')}</p>
         </motion.div>
 
         <div className="grid gap-12 md:grid-cols-2">
@@ -59,7 +59,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card/90 p-7 shadow-[0_20px_44px_rgba(0,0,0,0.24)]">
+            <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card/90 p-5 shadow-[0_20px_44px_rgba(0,0,0,0.24)] sm:p-7">
               <div>
                 <label htmlFor="name" className="mb-2 block text-sm tracking-wide text-muted-foreground">
                   {t('contactSection.name')}
@@ -123,7 +123,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="space-y-6 rounded-2xl border border-border bg-card/90 p-8 shadow-[0_20px_44px_rgba(0,0,0,0.24)]">
+            <div className="space-y-6 rounded-2xl border border-border bg-card/90 p-6 shadow-[0_20px_44px_rgba(0,0,0,0.24)] sm:p-8">
               <h3 className="text-2xl">{t('contactSection.getInTouch')}</h3>
 
               <p className="text-muted-foreground">{portfolio.intro}</p>
@@ -157,7 +157,7 @@ export function Contact() {
             </div>
 
             <motion.div
-              className="rounded-2xl border border-primary/25 bg-primary/8 p-8"
+              className="rounded-2xl border border-primary/25 bg-primary/8 p-6 sm:p-8"
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start gap-4">

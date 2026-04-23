@@ -25,18 +25,31 @@ export function Navigation() {
   ]
 
   const handleNavClick = (item: NavItem) => {
+    setIsOpen(false)
+
     if (item.mode === 'route') {
       window.location.hash = item.href
-      setIsOpen(false)
       return
     }
 
-    const element = document.querySelector(item.href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    const scrollToSection = () => {
+      const element = document.querySelector(item.href)
+      if (!element) {
+        return
+      }
+
+      const navHeight = document.querySelector('nav')?.getBoundingClientRect().height ?? 0
+      const targetTop = window.scrollY + element.getBoundingClientRect().top - navHeight - 12
+
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: 'smooth',
+      })
     }
 
-    setIsOpen(false)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToSection)
+    })
   }
 
   return (

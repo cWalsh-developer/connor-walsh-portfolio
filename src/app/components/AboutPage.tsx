@@ -25,7 +25,7 @@ export function AboutPage() {
         <div className="absolute right-0 bottom-20 h-80 w-80 rounded-full bg-primary/8 blur-[130px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-10 md:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 md:px-8">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mb-8 flex flex-col gap-4">
           <a
             href="#"
@@ -40,35 +40,35 @@ export function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05 }}
-          className="overflow-hidden rounded-[2rem] border border-border bg-card/85 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur"
+          className="overflow-hidden rounded-[1.6rem] border border-border bg-card/85 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur sm:rounded-[2rem]"
         >
-          <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-transparent px-8 py-10 md:px-12">
+          <div className="border-b border-border bg-gradient-to-r from-primary/8 via-transparent to-transparent px-5 py-8 sm:px-7 sm:py-9 md:px-12 md:py-10">
             <p className="mb-3 text-sm font-semibold tracking-[0.35em] text-primary uppercase">{t('aboutPage.badge')}</p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight md:text-5xl">{t('aboutPage.title')}</h1>
-            <p className="max-w-4xl text-lg leading-8 text-foreground/90">
+            <h1 className="mb-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">{t('aboutPage.title')}</h1>
+            <p className="max-w-4xl text-base leading-7 text-foreground/90 sm:text-lg sm:leading-8">
               {t('aboutPage.description', {
                 yearsOfExperience,
               })}
             </p>
           </div>
 
-          <div className="space-y-12 px-8 py-10 md:px-12">
+          <div className="space-y-8 px-5 py-8 sm:space-y-10 sm:px-7 sm:py-9 md:space-y-12 md:px-12 md:py-10">
             <section>
               <SectionHeading title={t('aboutPage.experienceTitle')} />
               <div className="grid gap-6 md:grid-cols-3">
-                <article className="rounded-2xl border border-border bg-background/35 p-6">
+                <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                   <Briefcase className="mb-4 h-6 w-6 text-primary" />
                   <h3 className="text-lg font-semibold">{t('aboutPage.cards.yearsTitle', { yearsOfExperience })}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{t('aboutPage.cards.yearsDescription')}</p>
                 </article>
 
-                <article className="rounded-2xl border border-border bg-background/35 p-6">
+                <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                   <GraduationCap className="mb-4 h-6 w-6 text-primary" />
                   <h3 className="text-lg font-semibold">{t('aboutPage.cards.educationTitle')}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{t('aboutPage.cards.educationDescription')}</p>
                 </article>
 
-                <article className="rounded-2xl border border-border bg-background/35 p-6">
+                <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                   <Brain className="mb-4 h-6 w-6 text-primary" />
                   <h3 className="text-lg font-semibold">{t('aboutPage.cards.aiTitle')}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{t('aboutPage.cards.aiDescription')}</p>
@@ -79,7 +79,7 @@ export function AboutPage() {
             <section>
               <SectionHeading title={t('aboutPage.projectsTitle')} />
               <div className="space-y-6">
-                <article className="rounded-2xl border border-border bg-background/35 p-6">
+                <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                   <div className="mb-3 flex items-center gap-3">
                     <Route className="h-5 w-5 text-primary" />
                     <h3 className="text-xl font-semibold">{t('aboutPage.safeMapTitle')}</h3>
@@ -87,7 +87,7 @@ export function AboutPage() {
                   <p className="leading-7 text-foreground/90">{t('aboutPage.safeMapDescription')}</p>
                 </article>
 
-                <article className="rounded-2xl border border-border bg-background/35 p-6">
+                <article className="rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                   <div className="mb-3 flex items-center gap-3">
                     <Brain className="h-5 w-5 text-primary" />
                     <h3 className="text-xl font-semibold">{t('aboutPage.greenWasteTitle')}</h3>
@@ -99,7 +99,7 @@ export function AboutPage() {
 
             <section>
               <SectionHeading title={t('aboutPage.contributionsTitle')} />
-              <ul className="space-y-3 rounded-2xl border border-border bg-background/35 p-6">
+              <ul className="space-y-3 rounded-2xl border border-border bg-background/35 p-5 sm:p-6">
                 <li className="flex items-start gap-3 text-foreground/90">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
                   <span>{t('aboutPage.contributions.one')}</span>
@@ -115,7 +115,7 @@ export function AboutPage() {
               </ul>
             </section>
 
-            <section className="rounded-2xl border border-border bg-gradient-to-r from-primary/10 via-transparent to-transparent p-6">
+            <section className="rounded-2xl border border-border bg-gradient-to-r from-primary/10 via-transparent to-transparent p-5 sm:p-6">
               <p className="text-sm font-semibold tracking-[0.25em] text-primary uppercase">{t('aboutPage.beyondLabel')}</p>
               <p className="mt-3 max-w-3xl leading-7 text-foreground/90">{t('aboutPage.beyondDescription')}</p>
               <div className="mt-5 flex flex-wrap gap-3">

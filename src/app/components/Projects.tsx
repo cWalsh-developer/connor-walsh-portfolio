@@ -56,7 +56,7 @@ export function Projects() {
   const portfolio = usePortfolioContent()
 
   return (
-    <section id="projects" className="relative overflow-hidden px-6 py-32">
+    <section id="projects" className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 md:py-32">
       <div className="absolute inset-0">
         <div className="absolute top-[-4rem] left-1/3 h-[24rem] w-[24rem] rounded-full bg-primary/14 blur-[120px]" />
         <div className="absolute right-1/4 bottom-[-5rem] h-[20rem] w-[20rem] rounded-full bg-accent/10 blur-[120px]" />
@@ -67,14 +67,14 @@ export function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-14 text-center sm:mb-16 md:mb-20"
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card/75 px-4 py-2">
             <span className="text-xs tracking-[0.16em] text-primary uppercase">{t('projectsSection.badge')}</span>
           </div>
 
-          <h2 className="mb-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">{t('projectsSection.title')}</h2>
-          <p className="text-lg text-muted-foreground md:text-xl">{t('projectsSection.subtitle')}</p>
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">{t('projectsSection.title')}</h2>
+          <p className="mx-auto max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg md:text-xl">{t('projectsSection.subtitle')}</p>
         </motion.div>
 
         <div className="space-y-8">
@@ -88,7 +88,7 @@ export function Projects() {
               className="group"
             >
               <div className="relative overflow-hidden rounded-3xl border border-border bg-card/92 shadow-[0_22px_48px_rgba(0,0,0,0.24)] transition-all duration-300 hover:border-primary/45">
-                <div className="grid gap-10 p-8 md:grid-cols-2 md:p-9">
+                <div className="grid gap-8 p-5 sm:p-6 md:grid-cols-2 md:gap-10 md:p-9">
                   <motion.div
                     className="relative aspect-video overflow-hidden rounded-2xl border border-border/70"
                     whileHover={{ scale: 1.02 }}
@@ -108,9 +108,9 @@ export function Projects() {
                   </motion.div>
 
                   <div className="flex flex-col justify-center space-y-4">
-                    <h3 className="text-3xl font-semibold tracking-tight">{project.title}</h3>
+                    <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">{project.title}</h3>
 
-                    <p className="text-lg text-muted-foreground">{project.description}</p>
+                    <p className="text-base leading-7 text-muted-foreground sm:text-lg">{project.description}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (

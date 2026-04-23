@@ -26,7 +26,7 @@ export function Skills() {
   const portfolio = usePortfolioContent()
 
   return (
-    <section className="relative overflow-hidden px-6 py-32">
+    <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(122,210,255,0.1),transparent_65%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -34,10 +34,10 @@ export function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-14 text-center sm:mb-16 md:mb-20"
         >
-          <h2 className="mb-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">{t('skillsSection.title')}</h2>
-          <p className="text-lg text-muted-foreground md:text-xl">{t('skillsSection.subtitle')}</p>
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">{t('skillsSection.title')}</h2>
+          <p className="mx-auto max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg md:text-xl">{t('skillsSection.subtitle')}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -55,7 +55,7 @@ export function Skills() {
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="group relative"
             >
-              <div className="relative h-full overflow-hidden rounded-2xl border border-border bg-card/88 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.24)] transition-colors duration-300 group-hover:border-primary/45">
+              <div className="relative h-full overflow-hidden rounded-2xl border border-border bg-card/88 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.24)] transition-colors duration-300 group-hover:border-primary/45 sm:p-6">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(122,210,255,0.14),transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 <div className="relative z-10">

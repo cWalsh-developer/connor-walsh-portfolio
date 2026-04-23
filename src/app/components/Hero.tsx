@@ -6,7 +6,7 @@ export function Hero() {
   const portfolio = usePortfolioContent()
 
   return (
-    <section id="about" className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 pb-20">
+    <section id="about" className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-20">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-35" />
 
       <motion.div
@@ -41,11 +41,11 @@ export function Hero() {
             <span className="text-xs tracking-[0.16em] text-primary/95 uppercase md:text-sm">{portfolio.badge}</span>
           </div>
 
-          <h1 className="mt-7 text-5xl font-semibold not-italic text-foreground md:text-7xl">
+          <h1 className="mt-7 text-4xl font-semibold not-italic text-foreground sm:text-5xl md:text-7xl">
             {portfolio.role}
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 not-italic text-muted-foreground md:text-xl">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-7 not-italic text-muted-foreground sm:text-lg sm:leading-8 md:text-xl">
             {portfolio.brandStatement} {portfolio.summary}
           </p>
 
